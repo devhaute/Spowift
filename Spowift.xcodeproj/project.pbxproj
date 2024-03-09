@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A2DDFDF2B9C3C2D00F1FF95 /* Font+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2DDFDE2B9C3C2D00F1FF95 /* Font+Extension.swift */; };
+		2A2DDFE72B9C46D600F1FF95 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2A2DDFE42B9C46D600F1FF95 /* Montserrat-Regular.ttf */; };
+		2A2DDFE82B9C46D600F1FF95 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2A2DDFE52B9C46D600F1FF95 /* Montserrat-Bold.ttf */; };
+		2A2DDFE92B9C46D600F1FF95 /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2A2DDFE62B9C46D600F1FF95 /* Montserrat-SemiBold.ttf */; };
+		2A2DDFEC2B9C506500F1FF95 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2DDFEB2B9C506500F1FF95 /* View+Extension.swift */; };
 		2A90BC242B99E3580094BE30 /* SpowiftApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A90BC232B99E3580094BE30 /* SpowiftApp.swift */; };
 		2A90BC262B99E3580094BE30 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A90BC252B99E3580094BE30 /* ContentView.swift */; };
 		2A90BC282B99E3590094BE30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A90BC272B99E3590094BE30 /* Assets.xcassets */; };
@@ -32,6 +37,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2A2DDFDE2B9C3C2D00F1FF95 /* Font+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Extension.swift"; sourceTree = "<group>"; };
+		2A2DDFE42B9C46D600F1FF95 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		2A2DDFE52B9C46D600F1FF95 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
+		2A2DDFE62B9C46D600F1FF95 /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
+		2A2DDFEA2B9C470E00F1FF95 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		2A2DDFEB2B9C506500F1FF95 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 		2A90BC202B99E3580094BE30 /* Spowift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spowift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A90BC232B99E3580094BE30 /* SpowiftApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpowiftApp.swift; sourceTree = "<group>"; };
 		2A90BC252B99E3580094BE30 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -102,6 +113,7 @@
 		2A2DDFD92B9C3A2D00F1FF95 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2A2DDFE22B9C46AC00F1FF95 /* Fonts */,
 				2A90BC272B99E3590094BE30 /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -132,8 +144,20 @@
 		2A2DDFDD2B9C3AA600F1FF95 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				2A2DDFDE2B9C3C2D00F1FF95 /* Font+Extension.swift */,
+				2A2DDFEB2B9C506500F1FF95 /* View+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		2A2DDFE22B9C46AC00F1FF95 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				2A2DDFE52B9C46D600F1FF95 /* Montserrat-Bold.ttf */,
+				2A2DDFE42B9C46D600F1FF95 /* Montserrat-Regular.ttf */,
+				2A2DDFE62B9C46D600F1FF95 /* Montserrat-SemiBold.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		2A90BC172B99E3580094BE30 = {
@@ -158,6 +182,7 @@
 		2A90BC222B99E3580094BE30 /* Spowift */ = {
 			isa = PBXGroup;
 			children = (
+				2A2DDFEA2B9C470E00F1FF95 /* Info.plist */,
 				2A2DDFD52B9C3A0D00F1FF95 /* Core */,
 				2A2DDFD62B9C3A1400F1FF95 /* Data */,
 				2A2DDFD72B9C3A1A00F1FF95 /* Domain */,
@@ -289,8 +314,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A2DDFE82B9C46D600F1FF95 /* Montserrat-Bold.ttf in Resources */,
+				2A2DDFE72B9C46D600F1FF95 /* Montserrat-Regular.ttf in Resources */,
 				2A90BC2B2B99E3590094BE30 /* Preview Assets.xcassets in Resources */,
 				2A90BC282B99E3590094BE30 /* Assets.xcassets in Resources */,
+				2A2DDFE92B9C46D600F1FF95 /* Montserrat-SemiBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,7 +343,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A2DDFDF2B9C3C2D00F1FF95 /* Font+Extension.swift in Sources */,
 				2A90BC262B99E3580094BE30 /* ContentView.swift in Sources */,
+				2A2DDFEC2B9C506500F1FF95 /* View+Extension.swift in Sources */,
 				2A90BC242B99E3580094BE30 /* SpowiftApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -481,6 +511,7 @@
 				DEVELOPMENT_TEAM = NLCYJ22AZZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Spowift/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Spowift;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -515,6 +546,7 @@
 				DEVELOPMENT_TEAM = NLCYJ22AZZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Spowift/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Spowift;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
