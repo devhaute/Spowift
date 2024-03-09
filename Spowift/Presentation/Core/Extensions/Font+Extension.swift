@@ -59,3 +59,10 @@ struct BaseTypography: ViewModifier {
             .padding(.vertical, (type.lineHeight - type.styledFont.lineHeight) / 2)
     }
 }
+
+// MARK: -  Extenstion
+extension View {
+   func typography(_ type: TypographyStyle) -> some View {
+       self.modifier(BaseTypography(type: type))
+   }
+}

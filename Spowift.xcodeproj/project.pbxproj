@@ -11,8 +11,9 @@
 		2A2DDFE72B9C46D600F1FF95 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2A2DDFE42B9C46D600F1FF95 /* Montserrat-Regular.ttf */; };
 		2A2DDFE82B9C46D600F1FF95 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2A2DDFE52B9C46D600F1FF95 /* Montserrat-Bold.ttf */; };
 		2A2DDFE92B9C46D600F1FF95 /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2A2DDFE62B9C46D600F1FF95 /* Montserrat-SemiBold.ttf */; };
-		2A2DDFEC2B9C506500F1FF95 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2DDFEB2B9C506500F1FF95 /* View+Extension.swift */; };
 		2A2DDFEE2B9C57C300F1FF95 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2DDFED2B9C57C300F1FF95 /* Color+Extension.swift */; };
+		2A2DE0312B9C8C3500F1FF95 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2DE0302B9C8C3500F1FF95 /* TabBar.swift */; };
+		2A2DE0332B9C933B00F1FF95 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2DE0322B9C933B00F1FF95 /* View+Extension.swift */; };
 		2A90BC242B99E3580094BE30 /* SpowiftApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A90BC232B99E3580094BE30 /* SpowiftApp.swift */; };
 		2A90BC262B99E3580094BE30 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A90BC252B99E3580094BE30 /* ContentView.swift */; };
 		2A90BC282B99E3590094BE30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A90BC272B99E3590094BE30 /* Assets.xcassets */; };
@@ -43,8 +44,9 @@
 		2A2DDFE52B9C46D600F1FF95 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
 		2A2DDFE62B9C46D600F1FF95 /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
 		2A2DDFEA2B9C470E00F1FF95 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		2A2DDFEB2B9C506500F1FF95 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 		2A2DDFED2B9C57C300F1FF95 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
+		2A2DE0302B9C8C3500F1FF95 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
+		2A2DE0322B9C933B00F1FF95 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 		2A90BC202B99E3580094BE30 /* Spowift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spowift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A90BC232B99E3580094BE30 /* SpowiftApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpowiftApp.swift; sourceTree = "<group>"; };
 		2A90BC252B99E3580094BE30 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 				2A2DDFDB2B9C3A6E00F1FF95 /* Core */,
 				2A2DDFDC2B9C3A7F00F1FF95 /* Screens */,
 				2A90BC252B99E3580094BE30 /* ContentView.swift */,
+				2A2DE0302B9C8C3500F1FF95 /* TabBar.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -148,7 +151,7 @@
 			children = (
 				2A2DDFED2B9C57C300F1FF95 /* Color+Extension.swift */,
 				2A2DDFDE2B9C3C2D00F1FF95 /* Font+Extension.swift */,
-				2A2DDFEB2B9C506500F1FF95 /* View+Extension.swift */,
+				2A2DE0322B9C933B00F1FF95 /* View+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -349,8 +352,9 @@
 				2A2DDFDF2B9C3C2D00F1FF95 /* Font+Extension.swift in Sources */,
 				2A2DDFEE2B9C57C300F1FF95 /* Color+Extension.swift in Sources */,
 				2A90BC262B99E3580094BE30 /* ContentView.swift in Sources */,
-				2A2DDFEC2B9C506500F1FF95 /* View+Extension.swift in Sources */,
 				2A90BC242B99E3580094BE30 /* SpowiftApp.swift in Sources */,
+				2A2DE0332B9C933B00F1FF95 /* View+Extension.swift in Sources */,
+				2A2DE0312B9C8C3500F1FF95 /* TabBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

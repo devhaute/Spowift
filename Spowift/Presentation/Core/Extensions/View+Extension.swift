@@ -8,7 +8,12 @@
 import SwiftUI
 
 extension View {
-   func typography(_ type: TypographyStyle) -> some View {
-       self.modifier(BaseTypography(type: type))
-   }
+    @ViewBuilder
+    func hide(_ bool: Bool) -> some View {
+        if bool {
+            EmptyView()
+        } else {
+            self
+        }
+    }
 }

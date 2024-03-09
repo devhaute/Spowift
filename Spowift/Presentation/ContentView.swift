@@ -8,16 +8,41 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var selectedTab: TabBarItems = .home
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world")
-                .typography(.title1)
-                .background(Color.theme.main)
+        GeometryReader { proxy in
+            VStack {
+                content
+                
+                Spacer()
+                
+                TabBar(selectedTab: $selectedTab)
+            }
         }
-        .padding()
+        .background(Color.theme.neutralBlack)
+    }
+}
+
+extension ContentView {
+    private var content: some View {
+        switch selectedTab {
+        case .home:
+            Text("home")
+                .foregroundStyle(Color.theme.neutralWhite)
+        case .playlist:
+            Text("playlist")
+                .foregroundStyle(Color.theme.neutralWhite)
+        case .center:
+            Text("center")
+                .foregroundStyle(Color.theme.neutralWhite)
+        case .history:
+            Text("history")
+                .foregroundStyle(Color.theme.neutralWhite)
+        case .profile:
+            Text("profile")
+                .foregroundStyle(Color.theme.neutralWhite)
+        }
     }
 }
 
