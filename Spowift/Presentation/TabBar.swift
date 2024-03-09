@@ -39,41 +39,56 @@ enum TabBarItems: CaseIterable {
         case .profile: "profile_tab_off"
         }
     }
+    
+    var isCenter: Bool {
+        self == .center
+    }
 }
 
 struct TabBar: View {
     @Binding var selectedTab: TabBarItems
-    
+    @Namespace private var animation
+
     var body: some View {
-        HStack(spacing: 0) {
+        HStack(alignment: .top, spacing: 0) {
             Spacer()
             ForEach(TabBarItems.allCases, id: \.title) { tab in
                 Spacer()
-                    .hide(tab == .center)
+                    .hide(tab.isCenter)
                 
-                VStack(spacing: 2) {
-                    Image(tab == selectedTab ? tab.onIcon : tab.offIcon)
-                    Text(tab.title)
-                        .typography(.caption1)
-                        .foregroundStyle(
-                            tab == selectedTab
-                                ? Color.theme.main
-                                : Color.theme.neutralWhite
-                        )
+                ZStack(alignment: .top) {
+                    Image("selected_tabs")
+                        .hide(tab.isCenter || tab != selectedTab)
+                        .matchedGeometryEffect(id: "selectedTabs", in: animation)
+                    
+                    VStack(spacing: 2) {
+                        Image(tab == selectedTab ? tab.onIcon : tab.offIcon)
+                        
+                        Text(tab.title)
+                            .typography(.caption1)
+                            .foregroundStyle(
+                                tab == selectedTab
+                                    ? Color.theme.main
+                                    : Color.theme.neutralWhite
+                            )
+                    }
+                    .padding(.top, tab.isCenter ? 0 : 16)
+                    .offset(y: tab.isCenter ? -22 : 0)
+                    .onTapGesture {
+                        withAnimation(.spring) {
+                            selectedTab = tab
+                        }
+                    }
                 }
-                .offset(y: tab == .center ? -22 : 0)
-                .onTapGesture {
-                    selectedTab = tab
-                }
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
                 
                 Spacer()
                     .hide(tab == .center)
             }
             Spacer()
         }
-        .padding(.top, 16)
-        .padding(.bottom, 3)
-        .frame(maxWidth: .infinity, maxHeight: 89)
+        .frame(maxWidth: .infinity)
+        .frame(height: 112)
         .background(Color.theme.neutralGray)
     }
 }

@@ -21,6 +21,7 @@ struct ContentView: View {
             }
         }
         .background(Color.theme.neutralBlack)
+        .edgesIgnoringSafeArea(.bottom)
     }
 }
 
