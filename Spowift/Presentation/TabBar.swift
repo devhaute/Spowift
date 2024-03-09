@@ -60,6 +60,7 @@ struct TabBar: View {
                     Image("selected_tabs")
                         .hide(tab.isCenter || tab != selectedTab)
                         .matchedGeometryEffect(id: "selectedTabs", in: animation)
+                        .animation(.spring, value: selectedTab)
                     
                     VStack(spacing: 2) {
                         Image(tab == selectedTab ? tab.onIcon : tab.offIcon)
@@ -75,9 +76,7 @@ struct TabBar: View {
                     .padding(.top, tab.isCenter ? 0 : 16)
                     .offset(y: tab.isCenter ? -22 : 0)
                     .onTapGesture {
-                        withAnimation(.spring) {
-                            selectedTab = tab
-                        }
+                        selectedTab = tab
                     }
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
