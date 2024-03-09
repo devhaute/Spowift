@@ -67,6 +67,75 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A2DDFD52B9C3A0D00F1FF95 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		2A2DDFD62B9C3A1400F1FF95 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		2A2DDFD72B9C3A1A00F1FF95 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		2A2DDFD82B9C3A2200F1FF95 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				2A2DDFDA2B9C3A5E00F1FF95 /* Components */,
+				2A2DDFDB2B9C3A6E00F1FF95 /* Core */,
+				2A2DDFDC2B9C3A7F00F1FF95 /* Screens */,
+				2A90BC252B99E3580094BE30 /* ContentView.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		2A2DDFD92B9C3A2D00F1FF95 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2A90BC272B99E3590094BE30 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		2A2DDFDA2B9C3A5E00F1FF95 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		2A2DDFDB2B9C3A6E00F1FF95 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				2A2DDFDD2B9C3AA600F1FF95 /* Extensions */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		2A2DDFDC2B9C3A7F00F1FF95 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		2A2DDFDD2B9C3AA600F1FF95 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		2A90BC172B99E3580094BE30 = {
 			isa = PBXGroup;
 			children = (
@@ -89,9 +158,12 @@
 		2A90BC222B99E3580094BE30 /* Spowift */ = {
 			isa = PBXGroup;
 			children = (
+				2A2DDFD52B9C3A0D00F1FF95 /* Core */,
+				2A2DDFD62B9C3A1400F1FF95 /* Data */,
+				2A2DDFD72B9C3A1A00F1FF95 /* Domain */,
+				2A2DDFD82B9C3A2200F1FF95 /* Presentation */,
 				2A90BC232B99E3580094BE30 /* SpowiftApp.swift */,
-				2A90BC252B99E3580094BE30 /* ContentView.swift */,
-				2A90BC272B99E3590094BE30 /* Assets.xcassets */,
+				2A2DDFD92B9C3A2D00F1FF95 /* Resources */,
 				2A90BC292B99E3590094BE30 /* Preview Content */,
 			);
 			path = Spowift;
