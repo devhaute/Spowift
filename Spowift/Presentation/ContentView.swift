@@ -26,23 +26,29 @@ struct ContentView: View {
 }
 
 extension ContentView {
+    @ViewBuilder
     private var content: some View {
         switch selectedTab {
         case .home:
-            Text("home")
-                .foregroundStyle(Color.theme.neutralWhite)
+            BaseRouterView {
+                HomeView()
+            }
         case .playlist:
-            Text("playlist")
-                .foregroundStyle(Color.theme.neutralWhite)
+            BaseRouterView {
+                PlayListView()
+            }
         case .center:
-            Text("center")
-                .foregroundStyle(Color.theme.neutralWhite)
+            BaseRouterView {
+                HomeView()
+            }
         case .history:
-            Text("history")
-                .foregroundStyle(Color.theme.neutralWhite)
+            BaseRouterView {
+                HomeView()
+            }
         case .profile:
-            Text("profile")
-                .foregroundStyle(Color.theme.neutralWhite)
+            BaseRouterView {
+                HomeView()
+            }
         }
     }
 }
