@@ -15,9 +15,9 @@ struct ContentView: View {
             VStack {
                 content
                 
-                Spacer()
+                Spacer(minLength: 0)
                 
-                TabBar(selectedTab: $selectedTab)
+                TabBarItemsView(selectedTab: $selectedTab)
             }
         }
         .background(Color.theme.neutralBlack)
@@ -28,26 +28,10 @@ struct ContentView: View {
 extension ContentView {
     @ViewBuilder
     private var content: some View {
-        switch selectedTab {
-        case .home:
-            BaseRouterView {
-                HomeView()
-            }
-        case .playlist:
-            BaseRouterView {
-                PlayListView()
-            }
-        case .center:
-            BaseRouterView {
-                HomeView()
-            }
-        case .history:
-            BaseRouterView {
-                HomeView()
-            }
-        case .profile:
-            BaseRouterView {
-                HomeView()
+        ZStack {
+            ForEach(TabBarItems.allCases) { item in
+                item.tabView
+                    .opacity(selectedTab == item ? 1 : 0)
             }
         }
     }

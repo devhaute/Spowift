@@ -12,8 +12,10 @@
 		2A2DDFE82B9C46D600F1FF95 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2A2DDFE52B9C46D600F1FF95 /* Montserrat-Bold.ttf */; };
 		2A2DDFE92B9C46D600F1FF95 /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2A2DDFE62B9C46D600F1FF95 /* Montserrat-SemiBold.ttf */; };
 		2A2DDFEE2B9C57C300F1FF95 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2DDFED2B9C57C300F1FF95 /* Color+Extension.swift */; };
-		2A2DE0312B9C8C3500F1FF95 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2DE0302B9C8C3500F1FF95 /* TabBar.swift */; };
+		2A2DE0312B9C8C3500F1FF95 /* TabBarItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2DE0302B9C8C3500F1FF95 /* TabBarItemsView.swift */; };
 		2A2DE0332B9C933B00F1FF95 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2DE0322B9C933B00F1FF95 /* View+Extension.swift */; };
+		2A700A0D2BA21C620074BF41 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A700A0C2BA21C620074BF41 /* HistoryView.swift */; };
+		2A700A0F2BA21C700074BF41 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A700A0E2BA21C700074BF41 /* ProfileView.swift */; };
 		2A80F3402B9DFD7100220C74 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A80F33F2B9DFD7100220C74 /* Router.swift */; };
 		2A80F3452B9DFE7B00220C74 /* ArtistProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A80F3442B9DFE7B00220C74 /* ArtistProfileView.swift */; };
 		2A80F3472B9DFE8500220C74 /* ArtistProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A80F3462B9DFE8500220C74 /* ArtistProfileViewModel.swift */; };
@@ -50,8 +52,10 @@
 		2A2DDFE62B9C46D600F1FF95 /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
 		2A2DDFEA2B9C470E00F1FF95 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		2A2DDFED2B9C57C300F1FF95 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
-		2A2DE0302B9C8C3500F1FF95 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
+		2A2DE0302B9C8C3500F1FF95 /* TabBarItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemsView.swift; sourceTree = "<group>"; };
 		2A2DE0322B9C933B00F1FF95 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
+		2A700A0C2BA21C620074BF41 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		2A700A0E2BA21C700074BF41 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		2A80F33F2B9DFD7100220C74 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		2A80F3442B9DFE7B00220C74 /* ArtistProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistProfileView.swift; sourceTree = "<group>"; };
 		2A80F3462B9DFE8500220C74 /* ArtistProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistProfileViewModel.swift; sourceTree = "<group>"; };
@@ -120,7 +124,7 @@
 				2A2DDFDB2B9C3A6E00F1FF95 /* Core */,
 				2A2DDFDC2B9C3A7F00F1FF95 /* Screens */,
 				2A90BC252B99E3580094BE30 /* ContentView.swift */,
-				2A2DE0302B9C8C3500F1FF95 /* TabBar.swift */,
+				2A2DE0302B9C8C3500F1FF95 /* TabBarItemsView.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -153,8 +157,10 @@
 		2A2DDFDC2B9C3A7F00F1FF95 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				2A80F34B2B9E02AF00220C74 /* PlayList */,
 				2A80F3482B9DFF8B00220C74 /* Home */,
+				2A80F34B2B9E02AF00220C74 /* PlayList */,
+				2A700A0A2BA21C2A0074BF41 /* History */,
+				2A700A0B2BA21C360074BF41 /* Profile */,
 				2A80F3432B9DFE3900220C74 /* ArtistProfile */,
 			);
 			path = Screens;
@@ -178,6 +184,22 @@
 				2A2DDFE62B9C46D600F1FF95 /* Montserrat-SemiBold.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		2A700A0A2BA21C2A0074BF41 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				2A700A0C2BA21C620074BF41 /* HistoryView.swift */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		2A700A0B2BA21C360074BF41 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				2A700A0E2BA21C700074BF41 /* ProfileView.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		2A80F3432B9DFE3900220C74 /* ArtistProfile */ = {
@@ -389,6 +411,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A80F34D2B9E02CE00220C74 /* PlayListView.swift in Sources */,
+				2A700A0F2BA21C700074BF41 /* ProfileView.swift in Sources */,
+				2A700A0D2BA21C620074BF41 /* HistoryView.swift in Sources */,
 				2A2DDFDF2B9C3C2D00F1FF95 /* Font+Extension.swift in Sources */,
 				2A2DDFEE2B9C57C300F1FF95 /* Color+Extension.swift in Sources */,
 				2A80F3472B9DFE8500220C74 /* ArtistProfileViewModel.swift in Sources */,
@@ -398,7 +422,7 @@
 				2A80F3402B9DFD7100220C74 /* Router.swift in Sources */,
 				2A90BC242B99E3580094BE30 /* SpowiftApp.swift in Sources */,
 				2A2DE0332B9C933B00F1FF95 /* View+Extension.swift in Sources */,
-				2A2DE0312B9C8C3500F1FF95 /* TabBar.swift in Sources */,
+				2A2DE0312B9C8C3500F1FF95 /* TabBarItemsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

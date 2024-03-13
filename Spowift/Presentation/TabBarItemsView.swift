@@ -1,5 +1,5 @@
 //
-//  TabBar.swift
+//  TabBarItemsView.swift
 //  Spowift
 //
 //  Created by kai on 3/9/24.
@@ -7,9 +7,15 @@
 
 import SwiftUI
 
-enum TabBarItems: CaseIterable {
+enum TabBarItems: CaseIterable, Identifiable {
     case home, playlist, center, history, profile
     
+    var id: String {
+        title
+    }
+}
+
+extension TabBarItems {
     var title: String {
         switch self {
         case .home: "Home"
@@ -43,16 +49,42 @@ enum TabBarItems: CaseIterable {
     var isCenter: Bool {
         self == .center
     }
+
+    @ViewBuilder
+    var tabView: some View {
+        switch self {
+        case .home:
+            BaseRouterView {
+                HomeView()
+            }
+        case .playlist:
+            BaseRouterView {
+                PlayListView()
+            }
+        case .center:
+            BaseRouterView {
+                HomeView()
+            }
+        case .history:
+            BaseRouterView {
+                HistoryView()
+            }
+        case .profile:
+            BaseRouterView {
+                ProfileView()
+            }
+        }
+    }
 }
 
-struct TabBar: View {
+struct TabBarItemsView: View {
     @Binding var selectedTab: TabBarItems
     @Namespace private var animation
 
     var body: some View {
         HStack(alignment: .top, spacing: 0) {
             Spacer()
-            ForEach(TabBarItems.allCases, id: \.title) { tab in
+            ForEach(TabBarItems.allCases) { tab in
                 Spacer()
                     .hide(tab.isCenter)
                 
@@ -93,5 +125,5 @@ struct TabBar: View {
 }
 
 #Preview {
-    TabBar(selectedTab: .constant(.home))
+    TabBarItemsView(selectedTab: .constant(.home))
 }
