@@ -20,7 +20,6 @@ struct ContentView: View {
                 TabItemsView(selectedTab: $selectedTab)
             }
         }
-        .background(Color.theme.neutralBlack)
         .edgesIgnoringSafeArea(.bottom)
     }
 }

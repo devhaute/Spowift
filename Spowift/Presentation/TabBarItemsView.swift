@@ -26,23 +26,23 @@ extension TabItems {
         }
     }
     
-    var onIcon: String {
+    var onIcon: Image {
         switch self {
-        case .home: "home_tab_on"
-        case .playlist: "playlist_tab_on"
-        case .center: "center_tab"
-        case .history: "history_tab_on"
-        case .profile: "profile_tab_on"
+        case .home: Image.App.homeTabOn
+        case .playlist: Image.App.playlistTabOn
+        case .center: Image.App.centerTab
+        case .history: Image.App.historyTabOn
+        case .profile: Image.App.profileTabOn
         }
     }
     
-    var offIcon: String {
+    var offIcon: Image {
         switch self {
-        case .home: "home_tab_off"
-        case .playlist: "playlist_tab_off"
-        case .center: "center_tab"
-        case .history: "history_tab_off"
-        case .profile: "profile_tab_off"
+        case .home: Image.App.homeTabOff
+        case .playlist: Image.App.playlistTabOff
+        case .center: Image.App.centerTab
+        case .history: Image.App.historyTabOff
+        case .profile: Image.App.profileTabOff
         }
     }
     
@@ -89,13 +89,13 @@ struct TabItemsView: View {
                     .hide(tab.isCenter)
                 
                 ZStack(alignment: .top) {
-                    Image("selected_tabs")
+                    Image.App.tabSelectionStatusIcon
                         .hide(tab.isCenter || tab != selectedTab)
                         .matchedGeometryEffect(id: "selectedTabs", in: animation)
                         .animation(.spring, value: selectedTab)
                     
                     VStack(spacing: 2) {
-                        Image(tab == selectedTab ? tab.onIcon : tab.offIcon)
+                        tab == selectedTab ? tab.onIcon : tab.offIcon
                         
                         Text(tab.title)
                             .typography(.caption1)

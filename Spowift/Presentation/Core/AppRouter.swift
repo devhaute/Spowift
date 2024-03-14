@@ -1,5 +1,5 @@
 //
-//  Router.swift
+//  AppRouter.swift
 //  Spowift
 //
 //  Created by kai on 3/10/24.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-final class Router: ObservableObject {
+final class AppRouter: ObservableObject {
     enum Route: Hashable {
         case artistProfile(Int)
     }
@@ -36,7 +36,7 @@ final class Router: ObservableObject {
 }
 
 struct BaseRouterView<Content: View>: View {
-    @StateObject var router: Router = Router()
+    @StateObject var router: AppRouter = AppRouter()
     
     private let content: Content // root view content
     
@@ -47,7 +47,9 @@ struct BaseRouterView<Content: View>: View {
     var body: some View {
         NavigationStack(path: $router.path) {
             content
-                .navigationDestination(for: Router.Route.self) { route in
+                .background(.neutralBlack)
+                .edgesIgnoringSafeArea(.all)
+                .navigationDestination(for: AppRouter.Route.self) { route in
                     router.view(for: route)
                 }
         }

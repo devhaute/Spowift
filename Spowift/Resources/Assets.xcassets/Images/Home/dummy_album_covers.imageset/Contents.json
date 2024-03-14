@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "dummy_album_covers.pdf",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

@@ -14,9 +14,10 @@
 		2A2DDFEE2B9C57C300F1FF95 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2DDFED2B9C57C300F1FF95 /* Color+Extension.swift */; };
 		2A2DE0312B9C8C3500F1FF95 /* TabBarItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2DE0302B9C8C3500F1FF95 /* TabBarItemsView.swift */; };
 		2A2DE0332B9C933B00F1FF95 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2DE0322B9C933B00F1FF95 /* View+Extension.swift */; };
+		2A429ED12BA2BB6F00339A78 /* AppImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A429ED02BA2BB6F00339A78 /* AppImage.swift */; };
 		2A700A0D2BA21C620074BF41 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A700A0C2BA21C620074BF41 /* HistoryView.swift */; };
 		2A700A0F2BA21C700074BF41 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A700A0E2BA21C700074BF41 /* ProfileView.swift */; };
-		2A80F3402B9DFD7100220C74 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A80F33F2B9DFD7100220C74 /* Router.swift */; };
+		2A80F3402B9DFD7100220C74 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A80F33F2B9DFD7100220C74 /* AppRouter.swift */; };
 		2A80F3452B9DFE7B00220C74 /* ArtistProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A80F3442B9DFE7B00220C74 /* ArtistProfileView.swift */; };
 		2A80F3472B9DFE8500220C74 /* ArtistProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A80F3462B9DFE8500220C74 /* ArtistProfileViewModel.swift */; };
 		2A80F34A2B9DFFA000220C74 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A80F3492B9DFFA000220C74 /* HomeView.swift */; };
@@ -54,9 +55,10 @@
 		2A2DDFED2B9C57C300F1FF95 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		2A2DE0302B9C8C3500F1FF95 /* TabBarItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemsView.swift; sourceTree = "<group>"; };
 		2A2DE0322B9C933B00F1FF95 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
+		2A429ED02BA2BB6F00339A78 /* AppImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppImage.swift; sourceTree = "<group>"; };
 		2A700A0C2BA21C620074BF41 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		2A700A0E2BA21C700074BF41 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
-		2A80F33F2B9DFD7100220C74 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		2A80F33F2B9DFD7100220C74 /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
 		2A80F3442B9DFE7B00220C74 /* ArtistProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistProfileView.swift; sourceTree = "<group>"; };
 		2A80F3462B9DFE8500220C74 /* ArtistProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistProfileViewModel.swift; sourceTree = "<group>"; };
 		2A80F3492B9DFFA000220C74 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -149,7 +151,8 @@
 			isa = PBXGroup;
 			children = (
 				2A2DDFDD2B9C3AA600F1FF95 /* Extensions */,
-				2A80F33F2B9DFD7100220C74 /* Router.swift */,
+				2A80F33F2B9DFD7100220C74 /* AppRouter.swift */,
+				2A429ED02BA2BB6F00339A78 /* AppImage.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -417,9 +420,10 @@
 				2A2DDFEE2B9C57C300F1FF95 /* Color+Extension.swift in Sources */,
 				2A80F3472B9DFE8500220C74 /* ArtistProfileViewModel.swift in Sources */,
 				2A90BC262B99E3580094BE30 /* ContentView.swift in Sources */,
+				2A429ED12BA2BB6F00339A78 /* AppImage.swift in Sources */,
 				2A80F3452B9DFE7B00220C74 /* ArtistProfileView.swift in Sources */,
 				2A80F34A2B9DFFA000220C74 /* HomeView.swift in Sources */,
-				2A80F3402B9DFD7100220C74 /* Router.swift in Sources */,
+				2A80F3402B9DFD7100220C74 /* AppRouter.swift in Sources */,
 				2A90BC242B99E3580094BE30 /* SpowiftApp.swift in Sources */,
 				2A2DE0332B9C933B00F1FF95 /* View+Extension.swift in Sources */,
 				2A2DE0312B9C8C3500F1FF95 /* TabBarItemsView.swift in Sources */,
