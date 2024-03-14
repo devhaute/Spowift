@@ -13,23 +13,28 @@ struct HomeView: View {
     var body: some View {
         ScrollView(showsIndicators: false) {
             LazyVStack(spacing: 32) {
-                Image.App.dummyHomeBanner
-                    .resizable()
-                    .scaledToFit()
-                    .padding(.horizontal, 32)
+                banners
                 
                 todayHits
                 
                 artists
             }
-            .foregroundStyle(.white)
-            .padding(.vertical, 55)
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .padding(.bottom, 55)
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .foregroundColor(.neutralWhite)
+        .background(.neutralBlack)
     }
 }
 
 extension HomeView {
+    private var banners: some View {
+        Image.App.dummyHomeBanner
+            .resizable()
+            .scaledToFit()
+            .padding(.horizontal, 32)
+    }
+    
     private var todayHits: some View {
         VStack(alignment: .leading, spacing: 12) {
             Text("Today’s hits")

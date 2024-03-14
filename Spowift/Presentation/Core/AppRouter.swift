@@ -47,8 +47,6 @@ struct BaseRouterView<Content: View>: View {
     var body: some View {
         NavigationStack(path: $router.path) {
             content
-                .background(.neutralBlack)
-                .edgesIgnoringSafeArea(.all)
                 .navigationDestination(for: AppRouter.Route.self) { route in
                     router.view(for: route)
                 }
