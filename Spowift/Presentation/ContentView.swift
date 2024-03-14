@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var selectedTab: TabBarItems = .home
+    @State private var selectedTab: TabItems = .home
     
     var body: some View {
         GeometryReader { proxy in
@@ -17,7 +17,7 @@ struct ContentView: View {
                 
                 Spacer(minLength: 0)
                 
-                TabBarItemsView(selectedTab: $selectedTab)
+                TabItemsView(selectedTab: $selectedTab)
             }
         }
         .background(Color.theme.neutralBlack)
@@ -29,7 +29,7 @@ extension ContentView {
     @ViewBuilder
     private var content: some View {
         ZStack {
-            ForEach(TabBarItems.allCases) { item in
+            ForEach(TabItems.allCases) { item in
                 item.tabView
                     .opacity(selectedTab == item ? 1 : 0)
             }

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-enum TabBarItems: CaseIterable, Identifiable {
+enum TabItems: CaseIterable, Identifiable {
     case home, playlist, center, history, profile
     
     var id: String {
@@ -15,7 +15,7 @@ enum TabBarItems: CaseIterable, Identifiable {
     }
 }
 
-extension TabBarItems {
+extension TabItems {
     var title: String {
         switch self {
         case .home: "Home"
@@ -77,14 +77,14 @@ extension TabBarItems {
     }
 }
 
-struct TabBarItemsView: View {
-    @Binding var selectedTab: TabBarItems
+struct TabItemsView: View {
+    @Binding var selectedTab: TabItems
     @Namespace private var animation
 
     var body: some View {
         HStack(alignment: .top, spacing: 0) {
             Spacer()
-            ForEach(TabBarItems.allCases) { tab in
+            ForEach(TabItems.allCases) { tab in
                 Spacer()
                     .hide(tab.isCenter)
                 
@@ -125,5 +125,5 @@ struct TabBarItemsView: View {
 }
 
 #Preview {
-    TabBarItemsView(selectedTab: .constant(.home))
+    TabItemsView(selectedTab: .constant(.home))
 }
