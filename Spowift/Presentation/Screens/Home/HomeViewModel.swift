@@ -1,14 +1,14 @@
 //
-//  ArtistProfileView.swift
+//  HomeViewModel.swift
 //  Spowift
 //
-//  Created by kai on 3/10/24.
+//  Created by kai on 3/14/24.
 //
 
 import Foundation
 
-extension ArtistProfileView {
-    final class ArtistProfileViewModel: ViewModel {
+extension HomeView {
+    final class HomeViewModel: ViewModel {
         
         // MARK: - Dependencies -
 
@@ -22,6 +22,8 @@ extension ArtistProfileView {
 
 // MARK: - Actions -
 
-extension ArtistProfileView.ArtistProfileViewModel {
-    
+extension HomeView.HomeViewModel {
+    func onTabArtistRow() {
+        
+    }
 }

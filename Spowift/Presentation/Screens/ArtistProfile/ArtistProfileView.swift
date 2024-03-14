@@ -6,8 +6,12 @@
 //
 
 import SwiftUI
+import Factory
 
 struct ArtistProfileView: View {
+    @EnvironmentObject private var router: AppRouter
+    @InjectedObject(\.artistProfileViewModel) private var viewModel
+    
     let id: Int
     
     var body: some View {

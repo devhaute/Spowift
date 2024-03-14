@@ -6,9 +6,11 @@
 //
 
 import SwiftUI
+import Factory
 
 struct HomeView: View {
     @EnvironmentObject private var router: AppRouter
+    @InjectedObject(\.homeViewModel) private var viewModel
     
     var body: some View {
         ScrollView(showsIndicators: false) {
@@ -90,13 +92,12 @@ extension HomeView {
                             .resizable()
                             .frame(width: 9, height: 17)
                     }
+                    .onTapGesture {
+                        viewModel.onTabArtistRow()
+                    }
                 }
             }
         }
         .padding(.horizontal, 32)
     }
-}
-
-#Preview {
-    HomeView()
 }

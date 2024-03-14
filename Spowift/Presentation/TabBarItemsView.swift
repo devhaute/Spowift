@@ -51,7 +51,7 @@ extension TabItems {
     }
 
     @ViewBuilder
-    var tabView: some View {
+    var tabEntryView: some View {
         switch self {
         case .home:
             BaseRouterView {

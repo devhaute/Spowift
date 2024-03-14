@@ -11,14 +11,12 @@ struct ContentView: View {
     @State private var selectedTab: TabItems = .home
     
     var body: some View {
-        GeometryReader { proxy in
-            VStack {
-                content
-                
-                Spacer(minLength: 0)
-                
-                TabItemsView(selectedTab: $selectedTab)
-            }
+        VStack {
+            tabView
+            
+            Spacer(minLength: 0)
+            
+            TabItemsView(selectedTab: $selectedTab)
         }
         .edgesIgnoringSafeArea(.bottom)
     }
@@ -26,10 +24,10 @@ struct ContentView: View {
 
 extension ContentView {
     @ViewBuilder
-    private var content: some View {
+    private var tabView: some View {
         ZStack {
             ForEach(TabItems.allCases) { item in
-                item.tabView
+                item.tabEntryView
                     .opacity(selectedTab == item ? 1 : 0)
             }
         }
