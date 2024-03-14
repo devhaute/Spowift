@@ -39,11 +39,11 @@ extension HomeView {
             ScrollView(.horizontal) {
                 HStack(spacing: 16) {
                     ForEach(0..<10) { _ in
-                        VStack(spacing: 8) {
+                        VStack(alignment: .leading, spacing: 8) {
                             Image.App.dummyAlbumCovers
                                 .resizable()
                                 .frame(width: 128, height: 128)
-                                .clipShape(RoundedRectangle(cornerRadius: 20))
+                                .clipShape(RoundedRectangle(cornerRadius: 15))
                             
                             VStack(alignment: .leading, spacing: 2) {
                                 Text("ArTi Untuk Cinta")
@@ -54,7 +54,7 @@ extension HomeView {
                         }
                     }
                 }
-                .padding(.leading, 32)
+                .padding(.horizontal, 32)
             }
         }
     }
@@ -66,7 +66,7 @@ extension HomeView {
             
             VStack(spacing: 12) {
                 ForEach(0..<10) { _ in
-                    HStack {
+                    HStack(spacing: 16) {
                         Image.App.dummyArtistProfile
                             .resizable()
                             .frame(width: 80, height: 80)
