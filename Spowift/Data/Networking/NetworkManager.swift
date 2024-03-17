@@ -11,7 +11,7 @@ import OSLog
 /// The network manager protocol.
 /// It is responsible for making network requests.
 protocol NetworkManager {
-    func makeRequest(with requestData: RequestProtocol) async throws -> Data
+    func makeRequest<T: Decodable>(with requestData: RequestProtocol) async throws -> T
 }
 
 class DefaultNetworkManager: NetworkManager {
@@ -22,7 +22,7 @@ class DefaultNetworkManager: NetworkManager {
     }
     
     /// Makes a network request.
-    func makeRequest(with requestData: RequestProtocol) async throws -> Data {
+    func makeRequest<T: Decodable>(with requestData: RequestProtocol) async throws -> T {
         let request = try requestData.request()
         var responseStatusCode: Int?
         do {
@@ -32,8 +32,10 @@ class DefaultNetworkManager: NetworkManager {
                 responseStatusCode = (response as? HTTPURLResponse)?.statusCode
                 throw NetworkError.invalidServerResponse
             }
+            let decoded: T = try decoder.decode(data: data)
+            
             logSuccess(request)
-            return data
+            return decoded
         } catch {
             logError(responseStatusCode, request, error)
             throw error
@@ -56,3 +58,10 @@ class DefaultNetworkManager: NetworkManager {
     }
 }
 
+// MARK: - Returns Data Parser -
+
+extension NetworkManager {
+    var decoder: DataDecoder {
+        return DefaultDataDecoder()
+    }
+}
