@@ -93,7 +93,7 @@ extension HomeView {
                             .frame(width: 9, height: 17)
                     }
                     .onTapGesture {
-                        viewModel.onTabArtistRow()
+                        router.navigateTo(.artistProfile(123))
                     }
                 }
             }

@@ -7,23 +7,19 @@
 
 import Foundation
 
-extension HomeView {
-    final class HomeViewModel: ViewModel {
-        
-        // MARK: - Dependencies -
+final class HomeViewModel: ViewModel {
+    
+    // MARK: - Dependencies -
 
-        // MARK: - Properties -
-        
-        // MARK: - Observable Properties -
+    // MARK: - Properties -
+    
+    // MARK: - Observable Properties -
 
-        // MARK: - Init -
-    }
+    // MARK: - Init -
 }
 
 // MARK: - Actions -
 
-extension HomeView.HomeViewModel {
-    func onTabArtistRow() {
-        
-    }
+extension HomeViewModel {
+    
 }

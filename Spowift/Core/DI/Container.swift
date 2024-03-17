@@ -11,11 +11,12 @@ import Factory
 // MARK: - Injecting ViewModels -
 
 extension Container {
-    var homeViewModel: Factory<HomeView.HomeViewModel> {
-        Factory(self) { return HomeView.HomeViewModel() }
+    var homeViewModel: Factory<HomeViewModel> {
+        Factory(self) { return HomeViewModel() }
+            .scope(.cached)
     }
     
-    var artistProfileViewModel: Factory<ArtistProfileView.ArtistProfileViewModel> {
-        Factory(self) { return ArtistProfileView.ArtistProfileViewModel() }
+    var artistProfileViewModel: Factory<ArtistProfileViewModel> {
+        Factory(self) { return ArtistProfileViewModel() }
     }
 }

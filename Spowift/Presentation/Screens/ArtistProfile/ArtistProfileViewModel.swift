@@ -7,21 +7,19 @@
 
 import Foundation
 
-extension ArtistProfileView {
-    final class ArtistProfileViewModel: ViewModel {
-        
-        // MARK: - Dependencies -
+final class ArtistProfileViewModel: ViewModel {
+    
+    // MARK: - Dependencies -
 
-        // MARK: - Properties -
-        
-        // MARK: - Observable Properties -
+    // MARK: - Properties -
+    
+    // MARK: - Observable Properties -
 
-        // MARK: - Init -
-    }
+    // MARK: - Init -
 }
 
 // MARK: - Actions -
 
-extension ArtistProfileView.ArtistProfileViewModel {
+extension ArtistProfileViewModel {
     
 }
