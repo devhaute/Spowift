@@ -38,7 +38,8 @@ Spowift는 Spotify에서 제공하는 <a href="https://developer.spotify.com/doc
 <!-- TOC -->
 
 ## Screenshots
-<img src="https://github.com/devhaute/Spowift/assets/90536403/7af841e5-6f5d-401f-8030-8c105ec58921" alt="Login"  height=360> <img src="https://github.com/devhaute/Spowift/assets/90536403/e2de8337-3e9e-4252-a3a5-d172932f6e27" alt="Home"  height=360> <img src="https://github.com/devhaute/Spowift/assets/90536403/9b6676b4-88c7-4f1d-89f7-24fcd8538a5d" alt="Artist Detail" height=360>
+
+추후 내용 추가
 
 ## Quick start
 
