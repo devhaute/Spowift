@@ -1,0 +1,69 @@
+<h1 align="center">🎵 Spowift 🎵</h1>
+
+<p align="center">
+<a href="https://developer.apple.com/xcode/swiftui/">
+  <img src="https://img.shields.io/badge/Platform-SwiftUI-orange?logo=swift"
+    alt="Platform" />
+</a>
+<a href="https://github.com/devhaute/Spowift/blob/main/LICENSE">
+<img src="https://img.shields.io/github/license/aagarwal1012/animated-text-kit?color=red"
+alt="License: MIT" />
+</a>
+<a href="https://github.com/devhaute/Spowift">
+<img src="https://img.shields.io/github/stars/devhaute/Spowift.svg?style=flat&logo=github&colorB=deeppink&label=stars" alt="Star on Github">
+</a>
+
+<br>
+Spowift는 Spotify에서 제공하는 <a href="https://developer.spotify.com/documentation/web-api"> Web API </a>를 활용하여 오늘의 가장 핫한 곡, 아티스트 정보등 음악 관련 정보를 확인해 볼 수 있는 SwiftUI 앱입니다.
+ <br>
+ 이 앱은 아키텍처와 패턴 그리고 다양한 기술들을 적용해보고 Best Practice를 찾기 위한 개인 프로젝트입니다.
+    <br>
+    <a href="https://github.com/devhaute/Spowift/issues/new">Report bug</a>
+    ·
+    <a href="https://github.com/devhaute/Spowift/issues/new">Request feature</a>
+<br>
+</p>
+
+
+<!-- TOC -->
+
+* [Screenshots](#screenshots)
+* [Quick start](#quick-start)
+* [Project Structure](#project-structure)
+    * [Folder Structure](#folder-structure)
+* [Tools & Frameworks Used](#tools--frameworks-used)
+* [Development Environment](#development-environment)
+* [License](#license)
+
+<!-- TOC -->
+
+## Screenshots
+
+추후 내용 추가
+
+## Quick start
+
+추후 내용 추가
+
+## Project Structure
+
+추후 내용 추가
+
+### Folder Structure
+
+추후 내용 추가
+
+## Tools & Frameworks Used
+
+추후 내용 추가
+
+## Development Environment
+
+* Xcode 15.1
+* Swift 5.9.2
+* iOS Deployment Target 16.0
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
+
