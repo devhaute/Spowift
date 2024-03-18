@@ -20,6 +20,7 @@ extension Image {
         static let profileTabOff = Image("profile_tab_off")
         static let centerTab = Image("center_tab")
         static let rightArrow = Image("right_arrow")
+        static let loggedOutBackground = Image("logged_out_background")
     }
 }
 
