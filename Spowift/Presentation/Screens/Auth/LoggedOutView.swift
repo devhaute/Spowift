@@ -6,8 +6,11 @@
 //
 
 import SwiftUI
+import Factory
 
 struct LoggedOutView: View {
+    @InjectedObject(\.loggedOutViewModel) private var viewModel
+    
     var body: some View {
         ZStack(alignment: .bottom) {
             background
@@ -57,7 +60,7 @@ extension LoggedOutView {
     
     private var login: some View {
         Button(action: {
-            //
+            viewModel.onTapStartButton()
         }, label: {
             Text("Get Started")
                 .typography(.title1)

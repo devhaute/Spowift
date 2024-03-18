@@ -9,6 +9,7 @@ import Foundation
 import OSLog
 
 protocol RequestProtocol {
+    var host: String { get }
     var path: String { get }
     var requestType: RequestType { get }
     var headers: [String: String] { get }
@@ -19,7 +20,7 @@ protocol RequestProtocol {
 // MARK: - Default RequestProtocol
 extension RequestProtocol {
     var host: String {
-        return "https://api.spotify.com/v1"
+        return APIConstants.apiHost
     }
     
     var params: [String: Any] {

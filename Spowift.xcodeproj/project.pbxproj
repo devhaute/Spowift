@@ -27,6 +27,14 @@
 		2A429ED32BA2ED5B00339A78 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A429ED22BA2ED5B00339A78 /* HomeViewModel.swift */; };
 		2A429ED52BA2F05C00339A78 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A429ED42BA2F05C00339A78 /* ViewModel.swift */; };
 		2A429ED82BA2F1FD00339A78 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A429ED72BA2F1FD00339A78 /* Container.swift */; };
+		2A5FC1112BA8048100B7B3C3 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5FC1102BA8048100B7B3C3 /* APIConstants.swift */; };
+		2A5FC1132BA8079700B7B3C3 /* LoggedOutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5FC1122BA8079700B7B3C3 /* LoggedOutViewModel.swift */; };
+		2A5FC12B2BA8889F00B7B3C3 /* GetAuthorizationUrlUC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5FC12A2BA8889F00B7B3C3 /* GetAuthorizationUrlUC.swift */; };
+		2A5FC12D2BA889C100B7B3C3 /* AuthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5FC12C2BA889C100B7B3C3 /* AuthRepository.swift */; };
+		2A5FC1302BA88AF200B7B3C3 /* SpotifyAPI in Frameworks */ = {isa = PBXBuildFile; productRef = 2A5FC12F2BA88AF200B7B3C3 /* SpotifyAPI */; };
+		2A5FC1332BA88AFE00B7B3C3 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 2A5FC1322BA88AFE00B7B3C3 /* KeychainAccess */; };
+		2A5FC1352BA88BBE00B7B3C3 /* AuthDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5FC1342BA88BBE00B7B3C3 /* AuthDataSource.swift */; };
+		2A5FC1372BA88D1700B7B3C3 /* Spotify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5FC1362BA88D1700B7B3C3 /* Spotify.swift */; };
 		2A700A0D2BA21C620074BF41 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A700A0C2BA21C620074BF41 /* HistoryView.swift */; };
 		2A700A0F2BA21C700074BF41 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A700A0E2BA21C700074BF41 /* ProfileView.swift */; };
 		2A80F3402B9DFD7100220C74 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A80F33F2B9DFD7100220C74 /* AppRouter.swift */; };
@@ -81,6 +89,12 @@
 		2A429ED22BA2ED5B00339A78 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		2A429ED42BA2F05C00339A78 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		2A429ED72BA2F1FD00339A78 /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
+		2A5FC1102BA8048100B7B3C3 /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
+		2A5FC1122BA8079700B7B3C3 /* LoggedOutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedOutViewModel.swift; sourceTree = "<group>"; };
+		2A5FC12A2BA8889F00B7B3C3 /* GetAuthorizationUrlUC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAuthorizationUrlUC.swift; sourceTree = "<group>"; };
+		2A5FC12C2BA889C100B7B3C3 /* AuthRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRepository.swift; sourceTree = "<group>"; };
+		2A5FC1342BA88BBE00B7B3C3 /* AuthDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthDataSource.swift; sourceTree = "<group>"; };
+		2A5FC1362BA88D1700B7B3C3 /* Spotify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spotify.swift; sourceTree = "<group>"; };
 		2A700A0C2BA21C620074BF41 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		2A700A0E2BA21C700074BF41 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		2A80F33F2B9DFD7100220C74 /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
@@ -103,7 +117,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A5FC1302BA88AF200B7B3C3 /* SpotifyAPI in Frameworks */,
 				2ABD34A42BA2F2850035C358 /* Factory in Frameworks */,
+				2A5FC1332BA88AFE00B7B3C3 /* KeychainAccess in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,7 +165,6 @@
 			isa = PBXGroup;
 			children = (
 				2A36E3A32BA42EE50063CED4 /* Errors */,
-				2A36E3AC2BA42FDE0063CED4 /* Repository */,
 				2A36E3A02BA42E7E0063CED4 /* Entity */,
 				2A36E39B2BA42CF30063CED4 /* UseCase */,
 			);
@@ -231,6 +246,7 @@
 		2A36E39B2BA42CF30063CED4 /* UseCase */ = {
 			isa = PBXGroup;
 			children = (
+				2A5FC1292BA8888600B7B3C3 /* AuthUC */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -250,16 +266,10 @@
 			path = Errors;
 			sourceTree = "<group>";
 		};
-		2A36E3AC2BA42FDE0063CED4 /* Repository */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Repository;
-			sourceTree = "<group>";
-		};
 		2A36E3AF2BA438B60063CED4 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				2A5FC12C2BA889C100B7B3C3 /* AuthRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -275,7 +285,7 @@
 		2A36E3B52BA43E0D0063CED4 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				2A3A27FA2BA6F29D00048B93 /* Api */,
+				2A5FC10F2BA8044100B7B3C3 /* Constants */,
 				2A36E3C62BA4450F0063CED4 /* Request */,
 				2A36E3CB2BA459150063CED4 /* Decoder */,
 				2A36E3B62BA43E180063CED4 /* NetworkError.swift */,
@@ -296,6 +306,7 @@
 		2A36E3B92BA43EF60063CED4 /* Remote */ = {
 			isa = PBXGroup;
 			children = (
+				2A5FC1342BA88BBE00B7B3C3 /* AuthDataSource.swift */,
 			);
 			path = Remote;
 			sourceTree = "<group>";
@@ -317,6 +328,7 @@
 		2A36E3C62BA4450F0063CED4 /* Request */ = {
 			isa = PBXGroup;
 			children = (
+				2A3A27FA2BA6F29D00048B93 /* Api */,
 				2A36E3C72BA4451D0063CED4 /* RequestProtocol.swift */,
 				2A36E3C92BA445590063CED4 /* RequestType.swift */,
 			);
@@ -335,6 +347,7 @@
 			isa = PBXGroup;
 			children = (
 				2A36E3CF2BA45B710063CED4 /* Logger.swift */,
+				2A5FC1362BA88D1700B7B3C3 /* Spotify.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -350,6 +363,7 @@
 			isa = PBXGroup;
 			children = (
 				2A3A27FC2BA72F3C00048B93 /* LoggedOutView.swift */,
+				2A5FC1122BA8079700B7B3C3 /* LoggedOutViewModel.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -360,6 +374,22 @@
 				2A429ED72BA2F1FD00339A78 /* Container.swift */,
 			);
 			path = DI;
+			sourceTree = "<group>";
+		};
+		2A5FC10F2BA8044100B7B3C3 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				2A5FC1102BA8048100B7B3C3 /* APIConstants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		2A5FC1292BA8888600B7B3C3 /* AuthUC */ = {
+			isa = PBXGroup;
+			children = (
+				2A5FC12A2BA8889F00B7B3C3 /* GetAuthorizationUrlUC.swift */,
+			);
+			path = AuthUC;
 			sourceTree = "<group>";
 		};
 		2A700A0A2BA21C2A0074BF41 /* History */ = {
@@ -472,6 +502,8 @@
 			name = Spowift;
 			packageProductDependencies = (
 				2ABD34A32BA2F2850035C358 /* Factory */,
+				2A5FC12F2BA88AF200B7B3C3 /* SpotifyAPI */,
+				2A5FC1322BA88AFE00B7B3C3 /* KeychainAccess */,
 			);
 			productName = Spowift;
 			productReference = 2A90BC202B99E3580094BE30 /* Spowift.app */;
@@ -547,6 +579,8 @@
 			mainGroup = 2A90BC172B99E3580094BE30;
 			packageReferences = (
 				2ABD34A22BA2F2850035C358 /* XCRemoteSwiftPackageReference "Factory" */,
+				2A5FC12E2BA88AF200B7B3C3 /* XCRemoteSwiftPackageReference "SpotifyAPI" */,
+				2A5FC1312BA88AFE00B7B3C3 /* XCRemoteSwiftPackageReference "KeychainAccess" */,
 			);
 			productRefGroup = 2A90BC212B99E3580094BE30 /* Products */;
 			projectDirPath = "";
@@ -596,8 +630,10 @@
 				2A80F34D2B9E02CE00220C74 /* PlayListView.swift in Sources */,
 				2A700A0F2BA21C700074BF41 /* ProfileView.swift in Sources */,
 				2A700A0D2BA21C620074BF41 /* HistoryView.swift in Sources */,
+				2A5FC12D2BA889C100B7B3C3 /* AuthRepository.swift in Sources */,
 				2A2DDFDF2B9C3C2D00F1FF95 /* Font+Extension.swift in Sources */,
 				2A2DDFEE2B9C57C300F1FF95 /* Color+Extension.swift in Sources */,
+				2A5FC1132BA8079700B7B3C3 /* LoggedOutViewModel.swift in Sources */,
 				2A80F3472B9DFE8500220C74 /* ArtistProfileViewModel.swift in Sources */,
 				2A36E3B72BA43E180063CED4 /* NetworkError.swift in Sources */,
 				2A3A27FD2BA72F3C00048B93 /* LoggedOutView.swift in Sources */,
@@ -609,13 +645,17 @@
 				2A429ED12BA2BB6F00339A78 /* AppImage.swift in Sources */,
 				2A80F3452B9DFE7B00220C74 /* ArtistProfileView.swift in Sources */,
 				2A36E3A52BA42EF20063CED4 /* AppError.swift in Sources */,
+				2A5FC1352BA88BBE00B7B3C3 /* AuthDataSource.swift in Sources */,
 				2A80F34A2B9DFFA000220C74 /* HomeView.swift in Sources */,
+				2A5FC12B2BA8889F00B7B3C3 /* GetAuthorizationUrlUC.swift in Sources */,
 				2A80F3402B9DFD7100220C74 /* AppRouter.swift in Sources */,
+				2A5FC1372BA88D1700B7B3C3 /* Spotify.swift in Sources */,
 				2A36E3C82BA4451D0063CED4 /* RequestProtocol.swift in Sources */,
 				2A90BC242B99E3580094BE30 /* SpowiftApp.swift in Sources */,
 				2A429ED82BA2F1FD00339A78 /* Container.swift in Sources */,
 				2A2DE0332B9C933B00F1FF95 /* View+Extension.swift in Sources */,
 				2A36E3C52BA444E00063CED4 /* NetworkManager.swift in Sources */,
+				2A5FC1112BA8048100B7B3C3 /* APIConstants.swift in Sources */,
 				2A429ED32BA2ED5B00339A78 /* HomeViewModel.swift in Sources */,
 				2A2DE0312B9C8C3500F1FF95 /* TabBarItemsView.swift in Sources */,
 				2A36E3CA2BA445590063CED4 /* RequestType.swift in Sources */,
@@ -960,6 +1000,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		2A5FC12E2BA88AF200B7B3C3 /* XCRemoteSwiftPackageReference "SpotifyAPI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Peter-Schorn/SpotifyAPI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.2.4;
+			};
+		};
+		2A5FC1312BA88AFE00B7B3C3 /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		2ABD34A22BA2F2850035C358 /* XCRemoteSwiftPackageReference "Factory" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/hmlongco/Factory.git";
@@ -971,6 +1027,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		2A5FC12F2BA88AF200B7B3C3 /* SpotifyAPI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2A5FC12E2BA88AF200B7B3C3 /* XCRemoteSwiftPackageReference "SpotifyAPI" */;
+			productName = SpotifyAPI;
+		};
+		2A5FC1322BA88AFE00B7B3C3 /* KeychainAccess */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2A5FC1312BA88AFE00B7B3C3 /* XCRemoteSwiftPackageReference "KeychainAccess" */;
+			productName = KeychainAccess;
+		};
 		2ABD34A32BA2F2850035C358 /* Factory */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 2ABD34A22BA2F2850035C358 /* XCRemoteSwiftPackageReference "Factory" */;
