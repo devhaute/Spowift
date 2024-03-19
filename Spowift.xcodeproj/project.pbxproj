@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -42,6 +42,7 @@
 		2A81AB262BA98E2C006EFEB6 /* AppAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A81AB252BA98E2C006EFEB6 /* AppAlert.swift */; };
 		2A81AB292BA9B8C4006EFEB6 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A81AB282BA9B8C4006EFEB6 /* ProfileViewModel.swift */; };
 		2A81AB2B2BA9BC75006EFEB6 /* LoggedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A81AB2A2BA9BC75006EFEB6 /* LoggedView.swift */; };
+		2A81AB2E2BA9DD82006EFEB6 /* ArkanaKeys in Frameworks */ = {isa = PBXBuildFile; productRef = 2A81AB2D2BA9DD82006EFEB6 /* ArkanaKeys */; };
 		2A90BC242B99E3580094BE30 /* SpowiftApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A90BC232B99E3580094BE30 /* SpowiftApp.swift */; };
 		2A90BC262B99E3580094BE30 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A90BC252B99E3580094BE30 /* ContentView.swift */; };
 		2A90BC282B99E3590094BE30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A90BC272B99E3590094BE30 /* Assets.xcassets */; };
@@ -117,6 +118,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A81AB2E2BA9DD82006EFEB6 /* ArkanaKeys in Frameworks */,
 				2A5FC1302BA88AF200B7B3C3 /* SpotifyAPI in Frameworks */,
 				2ABD34A42BA2F2850035C358 /* Factory in Frameworks */,
 				2A5FC1332BA88AFE00B7B3C3 /* KeychainAccess in Frameworks */,
@@ -496,6 +498,7 @@
 				2ABD34A32BA2F2850035C358 /* Factory */,
 				2A5FC12F2BA88AF200B7B3C3 /* SpotifyAPI */,
 				2A5FC1322BA88AFE00B7B3C3 /* KeychainAccess */,
+				2A81AB2D2BA9DD82006EFEB6 /* ArkanaKeys */,
 			);
 			productName = Spowift;
 			productReference = 2A90BC202B99E3580094BE30 /* Spowift.app */;
@@ -573,6 +576,7 @@
 				2ABD34A22BA2F2850035C358 /* XCRemoteSwiftPackageReference "Factory" */,
 				2A5FC12E2BA88AF200B7B3C3 /* XCRemoteSwiftPackageReference "SpotifyAPI" */,
 				2A5FC1312BA88AFE00B7B3C3 /* XCRemoteSwiftPackageReference "KeychainAccess" */,
+				2A81AB2C2BA9DD82006EFEB6 /* XCLocalSwiftPackageReference "ArkanaKeys/ArkanaKeys" */,
 			);
 			productRefGroup = 2A90BC212B99E3580094BE30 /* Products */;
 			projectDirPath = "";
@@ -991,6 +995,13 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCLocalSwiftPackageReference section */
+		2A81AB2C2BA9DD82006EFEB6 /* XCLocalSwiftPackageReference "ArkanaKeys/ArkanaKeys" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ArkanaKeys/ArkanaKeys;
+		};
+/* End XCLocalSwiftPackageReference section */
+
 /* Begin XCRemoteSwiftPackageReference section */
 		2A5FC12E2BA88AF200B7B3C3 /* XCRemoteSwiftPackageReference "SpotifyAPI" */ = {
 			isa = XCRemoteSwiftPackageReference;
@@ -1028,6 +1039,10 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2A5FC1312BA88AFE00B7B3C3 /* XCRemoteSwiftPackageReference "KeychainAccess" */;
 			productName = KeychainAccess;
+		};
+		2A81AB2D2BA9DD82006EFEB6 /* ArkanaKeys */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ArkanaKeys;
 		};
 		2ABD34A32BA2F2850035C358 /* Factory */ = {
 			isa = XCSwiftPackageProductDependency;

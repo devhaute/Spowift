@@ -9,6 +9,7 @@ import Foundation
 import SpotifyWebAPI
 import KeychainAccess
 import Combine
+import ArkanaKeys
 
 /// singleton manager
 final class SpotifyAuthManager: ObservableObject {
@@ -30,8 +31,8 @@ final class SpotifyAuthManager: ObservableObject {
     
     var api = SpotifyAPI(
         authorizationManager: AuthorizationCodeFlowManager(
-            clientId: "",
-            clientSecret: ""
+            clientId: ArkanaKeys.Keys.Global().spotifyClientID,
+            clientSecret: ArkanaKeys.Keys.Global().spotifyClientSecret
         )
     )
     
