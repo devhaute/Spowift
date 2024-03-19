@@ -7,7 +7,7 @@ environments:
   - Release
 
 global_secrets:
-  - SpotifyClientID
-  - SpotifyClientSecret
 
 environment_secrets:
+  - SpotifyClientID
+  - SpotifyClientSecret

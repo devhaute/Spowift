@@ -4,9 +4,9 @@
 import Foundation
 
 public protocol KeysGlobalProtocol {
-    var spotifyClientID: String { get }
-    var spotifyClientSecret: String { get }
 }
 
 public protocol KeysEnvironmentProtocol {
+    var spotifyClientID: String { get }
+    var spotifyClientSecret: String { get }
 }

@@ -31,8 +31,8 @@ final class SpotifyAuthManager: ObservableObject {
     
     var api = SpotifyAPI(
         authorizationManager: AuthorizationCodeFlowManager(
-            clientId: ArkanaKeys.Keys.Global().spotifyClientID,
-            clientSecret: ArkanaKeys.Keys.Global().spotifyClientSecret
+            clientId: ArkanaKeys.Keys.Debug().spotifyClientID,
+            clientSecret: ArkanaKeys.Keys.Debug().spotifyClientSecret
         )
     )
     
