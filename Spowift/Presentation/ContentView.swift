@@ -6,37 +6,18 @@
 //
 
 import SwiftUI
+import Factory
+import Combine
 
 struct ContentView: View {
-    @State private var selectedTab: TabItems = .home
-    
-    @State private var isLoggedIn: Bool = false
+    @InjectedObject(\.spotifyAuthManager) private var spotifyAuthManager
     
     var body: some View {
-        if isLoggedIn {
-            loggedView
+        if spotifyAuthManager.isAuthorized {
+            LoggedView()
         } else {
             LoggedOutView()
         }
-    }
-}
-
-extension ContentView {
-    @ViewBuilder
-    private var loggedView: some View {
-        VStack {
-            ZStack {
-                ForEach(TabItems.allCases) { item in
-                    item.tabEntryView
-                        .opacity(selectedTab == item ? 1 : 0)
-                }
-            }
-            
-            Spacer(minLength: 0)
-            
-            TabItemsView(selectedTab: $selectedTab)
-        }
-        .edgesIgnoringSafeArea(.bottom)
     }
 }
 

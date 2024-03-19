@@ -6,10 +6,16 @@
 //
 
 import SwiftUI
+import Factory
 
 struct ProfileView: View {
+    @InjectedObject(\.profileViewModel) private var viewModel
+    
     var body: some View {
-        Text("ProfileView")
+        Text("Logout")
+            .onTapGesture {
+                viewModel.logout()
+            }
     }
 }
 

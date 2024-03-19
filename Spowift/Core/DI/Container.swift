@@ -22,6 +22,10 @@ extension Container {
     var artistProfileViewModel: Factory<ArtistProfileViewModel> {
         Factory(self) { return ArtistProfileViewModel() }
     }
+    
+    var profileViewModel: Factory<ProfileViewModel> {
+        Factory(self) { return ProfileViewModel() }
+    }
 }
 
 // MARK: - Injecting Use Cases -
@@ -50,8 +54,8 @@ extension Container {
             .singleton
     }
     
-    var spotifyManager: Factory<SpotifyManager> {
-        Factory(self) { return SpotifyManager() }
+    var spotifyAuthManager: Factory<SpotifyAuthManager> {
+        Factory(self) { return SpotifyAuthManager() }
             .singleton
     }
 }
