@@ -29,6 +29,8 @@ struct LoggedOutView: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(.neutralBlack)
+        .onOpenURL(perform: viewModel.handleURL(_:))
+        .alert(item: $viewModel.alert) { $0.alert }
     }
 }
 

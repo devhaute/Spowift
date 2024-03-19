@@ -12,7 +12,7 @@ import WebKit
 final class LoggedOutViewModel: ViewModel {
     
     // MARK: - Dependencies -
-    @Injected(\.getAuthorizationUrlUC) private var getAuthorizationUrlUC
+    @Injected(\.spotifyManager) private var spotifyManager
     
     // MARK: - Properties -
     
@@ -24,15 +24,16 @@ final class LoggedOutViewModel: ViewModel {
 // MARK: - Actions -
 
 extension LoggedOutViewModel {
+    func handleURL(_ url: URL) {
+        print(url)
+    }
+    
     func onTapStartButton() {
-        let result = getAuthorizationUrlUC.execute()
-        
-        switch result {
-        case .success(let url):
+        do {
+            let url = try spotifyManager.getAuthorizationURL()
             UIApplication.shared.open(url)
-        case .failure(let error):
-            // TODO: Error View 구현하기
-            break
+        } catch {
+            alert = .invalidURL
         }
     }
 }

@@ -27,25 +27,19 @@ extension Container {
 // MARK: - Injecting Use Cases -
 
 extension Container {
-    var getAuthorizationUrlUC: Factory<GetAuthorizationUrlUC> {
-        Factory(self) { return DefaultGetAuthorizationUrlUC() }
-    }
+    
 }
 
  // MARK: - Injecting Repositories -
 
 extension Container {
-    var authRepository: Factory<AuthRepository> {
-        Factory(self) { return DefaultAuthRepository() }
-    }
+    
 }
 
 // MARK: - Injecting DataSources -
 
 extension Container {
-    var authDataSource: Factory<AuthDataSource> {
-        Factory(self) { return DefaultAuthDataSource() }
-    }
+    
 }
 
 // MARK: - Injecting Utils -

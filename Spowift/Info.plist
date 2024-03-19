@@ -7,11 +7,9 @@
 		<dict>
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
-			<key>CFBundleURLName</key>
-			<string>com.devhaute.Spowift</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>spowift://login-callback</string>
+				<string>spowift</string>
 			</array>
 		</dict>
 	</array>

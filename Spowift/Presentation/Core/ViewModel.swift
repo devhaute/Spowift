@@ -5,12 +5,8 @@
 //  Created by kai on 3/14/24.
 //
 
-import Foundation
+import SwiftUI
 
 class ViewModel: ObservableObject {
-    @Published var state: ViewState = .initial
-}
-
-enum ViewState: Equatable {
-    case initial, loading, error(String), success, empty
+    @Published var alert: AppAlert? = nil
 }
