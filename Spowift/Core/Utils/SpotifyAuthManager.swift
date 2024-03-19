@@ -30,8 +30,8 @@ final class SpotifyAuthManager: ObservableObject {
     
     var api = SpotifyAPI(
         authorizationManager: AuthorizationCodeFlowManager(
-            clientId: "2dcd832363ad4720b3b32b07afda2f45",
-            clientSecret: "054136b4ae794422a69c4a8a114b2a29"
+            clientId: "",
+            clientSecret: ""
         )
     )
     
@@ -108,7 +108,7 @@ extension SpotifyAuthManager {
         return url
     }
 
-    func authorizationManagerDidChange() {
+    private func authorizationManagerDidChange() {
         isAuthorized = api.authorizationManager.isAuthorized()
         
         do {
@@ -130,7 +130,7 @@ extension SpotifyAuthManager {
         
     }
 
-    func authorizationManagerDidDeauthorize() {
+    private func authorizationManagerDidDeauthorize() {
         isAuthorized = false
         
         do {
