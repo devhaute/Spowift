@@ -26,6 +26,12 @@ struct HomeView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .foregroundColor(.neutralWhite)
         .background(.neutralBlack)
+        .appNavigationBar {
+            Image.App.search
+                .resizable()
+                .frame(width: 24, height: 24)
+                .padding(.leading, .appContainerPadding - 10)
+        }
     }
 }
 
@@ -34,14 +40,14 @@ extension HomeView {
         Image.App.dummyHomeBanner
             .resizable()
             .scaledToFit()
-            .padding(.horizontal, 32)
+            .padding(.horizontal, .appContainerPadding)
     }
     
     private var todayHits: some View {
         VStack(alignment: .leading, spacing: 12) {
             Text("Today’s hits")
                 .typography(.title1)
-                .padding(.horizontal, 32)
+                .padding(.horizontal, .appContainerPadding)
             
             ScrollView(.horizontal) {
                 HStack(spacing: 16) {
@@ -61,7 +67,7 @@ extension HomeView {
                         }
                     }
                 }
-                .padding(.horizontal, 32)
+                .padding(.horizontal, .appContainerPadding)
             }
         }
     }
@@ -98,6 +104,6 @@ extension HomeView {
                 }
             }
         }
-        .padding(.horizontal, 32)
+        .padding(.horizontal, .appContainerPadding)
     }
 }

@@ -49,6 +49,8 @@
 		2A90BC2B2B99E3590094BE30 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A90BC2A2B99E3590094BE30 /* Preview Assets.xcassets */; };
 		2A90BC352B99E3590094BE30 /* SpowiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A90BC342B99E3590094BE30 /* SpowiftTests.swift */; };
 		2ABD34A42BA2F2850035C358 /* Factory in Frameworks */ = {isa = PBXBuildFile; productRef = 2ABD34A32BA2F2850035C358 /* Factory */; };
+		2ACD01472BAC1EC800B26C90 /* CGFloat+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACD01462BAC1EC800B26C90 /* CGFloat+Extension.swift */; };
+		2ACD01492BAC205400B26C90 /* AppNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACD01482BAC205400B26C90 /* AppNavigationBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +113,8 @@
 		2A90BC302B99E3590094BE30 /* SpowiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpowiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A90BC342B99E3590094BE30 /* SpowiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpowiftTests.swift; sourceTree = "<group>"; };
 		2A90BC3A2B99E3590094BE30 /* SpowiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpowiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2ACD01462BAC1EC800B26C90 /* CGFloat+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extension.swift"; sourceTree = "<group>"; };
+		2ACD01482BAC205400B26C90 /* AppNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNavigationBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +213,7 @@
 				2A80F33F2B9DFD7100220C74 /* AppRouter.swift */,
 				2A429ED02BA2BB6F00339A78 /* AppImage.swift */,
 				2A81AB252BA98E2C006EFEB6 /* AppAlert.swift */,
+				2ACD01482BAC205400B26C90 /* AppNavigationBar.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -232,6 +237,7 @@
 				2A2DDFED2B9C57C300F1FF95 /* Color+Extension.swift */,
 				2A2DDFDE2B9C3C2D00F1FF95 /* Font+Extension.swift */,
 				2A2DE0322B9C933B00F1FF95 /* View+Extension.swift */,
+				2ACD01462BAC1EC800B26C90 /* CGFloat+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -626,6 +632,7 @@
 				2A80F34D2B9E02CE00220C74 /* PlayListView.swift in Sources */,
 				2A700A0F2BA21C700074BF41 /* ProfileView.swift in Sources */,
 				2A700A0D2BA21C620074BF41 /* HistoryView.swift in Sources */,
+				2ACD01492BAC205400B26C90 /* AppNavigationBar.swift in Sources */,
 				2A2DDFDF2B9C3C2D00F1FF95 /* Font+Extension.swift in Sources */,
 				2A2DDFEE2B9C57C300F1FF95 /* Color+Extension.swift in Sources */,
 				2A5FC1132BA8079700B7B3C3 /* LoggedOutViewModel.swift in Sources */,
@@ -640,6 +647,7 @@
 				2A81AB262BA98E2C006EFEB6 /* AppAlert.swift in Sources */,
 				2A36E3B42BA43DCB0063CED4 /* Error+AppError.swift in Sources */,
 				2A429ED12BA2BB6F00339A78 /* AppImage.swift in Sources */,
+				2ACD01472BAC1EC800B26C90 /* CGFloat+Extension.swift in Sources */,
 				2A80F3452B9DFE7B00220C74 /* ArtistProfileView.swift in Sources */,
 				2A36E3A52BA42EF20063CED4 /* AppError.swift in Sources */,
 				2A80F34A2B9DFFA000220C74 /* HomeView.swift in Sources */,
