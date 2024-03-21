@@ -1,4 +1,7 @@
-<h1 align="center">🎵 Spowift 🎵</h1>
+<p align="center">
+    <img src="https://github.com/devhaute/Spowift/assets/90536403/24bea930-c27b-4375-a47d-2720764d70ff" width="250" />
+</p>
+<h1 align="center">Spowift 🎵</h1>
 
 <p align="center">
 <a href="https://developer.apple.com/xcode/swiftui/">
@@ -40,6 +43,7 @@ Spowift는 Spotify에서 제공하는 <a href="https://developer.spotify.com/doc
 ## Screenshots
 
 <img src="https://github.com/devhaute/Spowift/assets/90536403/ab382b2b-cc47-4201-bc75-72887e62fcf3" width="280" />
+<img src="https://github.com/devhaute/Spowift/assets/90536403/537e94b3-0ae5-4e1f-a320-1c5be3f755a9" width="280" />
 
 ## Quick start
 
