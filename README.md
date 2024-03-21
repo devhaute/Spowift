@@ -1,7 +1,6 @@
 <p align="center">
-    <img src="https://github.com/devhaute/Spowift/assets/90536403/0ddabb7b-168c-467d-9a8d-8ba57404d349" width="250" />
+    <img src="https://github.com/devhaute/Spowift/assets/90536403/24bea930-c27b-4375-a47d-2720764d70ff" width="250" />
 </p>
-
 <h1 align="center">Spowift 🎵</h1>
 
 <p align="center">
