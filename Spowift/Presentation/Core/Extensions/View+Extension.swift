@@ -16,4 +16,13 @@ extension View {
             self
         }
     }
+    
+    func onTapDownGesture(perform: @escaping () -> Void) -> some View {
+        self
+            ._onButtonGesture { pressing in
+                if pressing {
+                    perform()
+                }
+            } perform: { }
+    }
 }

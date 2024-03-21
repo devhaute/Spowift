@@ -11,6 +11,7 @@ import Factory
 struct HomeView: View {
     @EnvironmentObject private var router: AppRouter
     @InjectedObject(\.homeViewModel) private var viewModel
+    @FocusState private var isSearching: Bool
     
     var body: some View {
         ScrollView(showsIndicators: false) {
@@ -26,11 +27,40 @@ struct HomeView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .foregroundColor(.neutralWhite)
         .background(.neutralBlack)
+        .onTapDownGesture {
+            onTapDownScrollView()
+        }
         .appNavigationBar {
-            Image.App.search
-                .resizable()
-                .frame(width: 24, height: 24)
-                .padding(.leading, .appContainerPadding - 10)
+            HStack(spacing: 0) {
+                Image.App.search
+                    .resizable()
+                    .frame(width: 24, height: 24)
+                    .padding(.leading, .appContainerPadding - 10)
+                    .onTapGesture { onTapSearchButton() }
+                    .padding(.trailing, 10)
+                
+                Spacer()
+                
+                TextField("", text: $viewModel.searchText)
+                    .typography(.body1)
+                    .autocapitalization(.none)
+                    .disableAutocorrection(true)
+                    .foregroundStyle(.white)
+                    .padding(.vertical, 5)
+                    .frame(maxWidth: isSearching ? .infinity : 0)
+                    .overlay(alignment: .bottom) {
+                        Rectangle().fill(.neutralWhite).frame(height: 2)
+                    }
+                    .animation(.spring(), value: isSearching)
+                    .focused($isSearching)
+                
+                Spacer()
+            }
+            .frame(
+                width: isSearching
+                    ? UIScreen.main.bounds.width - .appContainerPadding - 10
+                    : nil
+            )
         }
     }
 }
@@ -105,5 +135,16 @@ extension HomeView {
             }
         }
         .padding(.horizontal, .appContainerPadding)
+    }
+    
+    private func onTapSearchButton() {
+        viewModel.resetSearchText()
+        isSearching.toggle()
+    }
+    
+    private func onTapDownScrollView() {
+        guard isSearching else { return }
+        viewModel.resetSearchText()
+        isSearching.toggle()
     }
 }

@@ -14,12 +14,15 @@ final class HomeViewModel: ViewModel {
     // MARK: - Properties -
     
     // MARK: - Observable Properties -
-
+    @Published var searchText = ""
+    
     // MARK: - Init -
 }
 
 // MARK: - Actions -
 
 extension HomeViewModel {
-    
+    func resetSearchText() {
+        searchText = ""
+    }
 }
