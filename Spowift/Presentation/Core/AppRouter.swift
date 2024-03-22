@@ -9,7 +9,7 @@ import SwiftUI
 
 final class AppRouter: ObservableObject {
     enum Route: Hashable {
-        case artistProfile(Int)
+        case artistProfile(id: String)
     }
     
     @Published fileprivate var path: NavigationPath = NavigationPath()

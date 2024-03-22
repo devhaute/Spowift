@@ -12,13 +12,22 @@ struct ArtistProfileView: View {
     @EnvironmentObject private var router: AppRouter
     @InjectedObject(\.artistProfileViewModel) private var viewModel
     
-    let id: Int
+    let id: String
     
     var body: some View {
-        Text("ArtistProfileView")
+        VStack {
+            Circle()
+                .frame(width: 96, height: 96)
+            
+            Text("Fauzian Ahmad")
+            
+            HStack {
+                
+            }
+        }
     }
 }
 
 #Preview {
-    ArtistProfileView(id: 1)
+    ArtistProfileView(id: "4Z8W4fKeB5YxbusRsdQVPb")
 }

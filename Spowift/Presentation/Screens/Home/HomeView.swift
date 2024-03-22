@@ -129,7 +129,7 @@ extension HomeView {
                             .frame(width: 9, height: 17)
                     }
                     .onTapGesture {
-                        router.navigateTo(.artistProfile(123))
+                        router.navigateTo(.artistProfile(id: "4Z8W4fKeB5YxbusRsdQVPb"))
                     }
                 }
             }
