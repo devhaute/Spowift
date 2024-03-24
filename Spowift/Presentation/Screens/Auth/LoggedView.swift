@@ -23,7 +23,7 @@ struct LoggedView: View {
             
             TabItemsView(selectedTab: $selectedTab)
         }
-        .edgesIgnoringSafeArea(.bottom)
+        .ignoresSafeArea(.all)
     }
 }
 

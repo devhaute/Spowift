@@ -23,6 +23,7 @@ extension Image {
         static let loggedOutBackground = Image("logged_out_background")
         static let search = Image("search")
         static let curveEffects = Image("curve_effects")
+        static let navigationBack = Image("navigation_back")
     }
 }
 

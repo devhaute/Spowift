@@ -93,6 +93,7 @@ struct TabItemsView: View {
                         .hide(tab.isCenter || tab != selectedTab)
                         .matchedGeometryEffect(id: "selectedTabs", in: animation)
                         .animation(.spring, value: selectedTab)
+                        .padding(.top, 1)
                     
                     VStack(spacing: 2) {
                         tab == selectedTab ? tab.onIcon : tab.offIcon
@@ -119,7 +120,7 @@ struct TabItemsView: View {
             Spacer()
         }
         .frame(maxWidth: .infinity)
-        .frame(height: 112)
+        .frame(height: 91)
         .background(Color.theme.neutralGray)
     }
 }

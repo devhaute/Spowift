@@ -30,16 +30,13 @@ struct HomeView: View {
         .onTapDownGesture {
             onTapDownScrollView()
         }
-        .appNavigationBar {
+        .appNavigationBar(left: {
             HStack(spacing: 0) {
                 Image.App.search
                     .resizable()
                     .frame(width: 24, height: 24)
-                    .padding(.leading, .appContainerPadding - 10)
                     .onTapGesture { onTapSearchButton() }
-                    .padding(.trailing, 10)
-                
-                Spacer()
+                    .padding(.trailing, 15)
                 
                 TextField("", text: $viewModel.searchText)
                     .typography(.body1)
@@ -58,10 +55,10 @@ struct HomeView: View {
             }
             .frame(
                 width: isSearching
-                    ? UIScreen.main.bounds.width - .appContainerPadding - 10
+                    ? UIScreen.main.bounds.width - .appContainerPadding - 15
                     : nil
             )
-        }
+        })
     }
 }
 

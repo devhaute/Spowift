@@ -35,6 +35,19 @@ struct ArtistProfileView: View {
             .foregroundStyle(.neutralWhite)
             .background(.neutralBlack)
         }
+        .appNavigationBar {
+            Image.App.navigationBack
+                .resizable()
+                .scaledToFit()
+                .frame(width: 32, height: 32)
+                .onTapGesture {
+                    onTapNavigationBack()
+                }
+        } center: {
+            Text("Artist")
+                .typography(.title1)
+                .foregroundStyle(.neutralWhite)
+        }
     }
 }
 
@@ -71,6 +84,10 @@ extension ArtistProfileView {
                     .typography(.title2)
             }
         }
+    }
+    
+    private func onTapNavigationBack() {
+        router.navigateBack()
     }
 }
 

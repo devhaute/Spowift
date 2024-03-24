@@ -7,15 +7,16 @@
 
 import SwiftUI
 
-struct AppNavigationBar<V: View>: ViewModifier {
-    let left: () -> V
-    let center: (() -> V)?
-    let right: (() -> V)?
+struct AppNavigationBar<L: View, C: View, R: View>: ViewModifier {
+    let left: () -> L
+    let center: () -> C
+    let right: () -> R
     
     func body(content: Content) -> some View {
         ZStack {
             content
         }
+        .navigationBarBackButtonHidden()
         .navigationBarTitle("", displayMode: .inline)
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
@@ -23,11 +24,11 @@ struct AppNavigationBar<V: View>: ViewModifier {
             }
             
             ToolbarItem(placement: .principal) {
-                center?()
+                center()
             }
             
             ToolbarItem(placement: .navigationBarTrailing) {
-                right?()
+                right()
             }
         }
         .toolbarBackground(Color.theme.neutralBlack.opacity(0.9), for: .navigationBar)
@@ -36,10 +37,10 @@ struct AppNavigationBar<V: View>: ViewModifier {
 
 // MARK: -  Extenstion
 extension View {
-    func appNavigationBar<V: View>(
-        left: @escaping () -> V,
-        center: (() -> V)? = nil,
-        right: (() -> V)? = nil
+    func appNavigationBar<L: View, C: View, R: View>(
+        left: @escaping () -> L = { EmptyView() },
+        center: @escaping () -> C = { EmptyView() },
+        right: @escaping () -> R = { EmptyView() }
     ) -> some View {
         self.modifier(
             AppNavigationBar(
