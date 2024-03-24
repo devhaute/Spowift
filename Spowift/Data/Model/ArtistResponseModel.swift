@@ -40,7 +40,7 @@ struct ArtistResponseModel: Codable {
     let followers: Followers
     let popularity: Int
     let id: String
-    let images: [Image]
+    let images: [ArtistImage]
     let name: String
 }
 
@@ -51,7 +51,7 @@ struct Followers: Codable {
 }
 
 // MARK: - Image
-struct Image: Codable {
+struct ArtistImage: Codable {
     let height: Int
     let url: String
     let width: Int
