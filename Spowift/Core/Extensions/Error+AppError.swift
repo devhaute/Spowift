@@ -8,11 +8,14 @@
 import Foundation
 
 extension Error {
-    /// Converts any error to an `AppError` object.
     var toAppError: AppError {
-        if self is NetworkError {
-            return .networkError("errorWhileFetchingData")
+        switch self {
+        case _ as NetworkError:
+            return .networkError
+        case let appError as AppError:
+            return appError
+        default:
+            return .unexpectedError
         }
-        return .unknownError("unknownError")
     }
 }

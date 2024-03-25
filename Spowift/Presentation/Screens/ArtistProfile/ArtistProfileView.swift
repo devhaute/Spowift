@@ -25,7 +25,7 @@ struct ArtistProfileView: View {
                     .typography(.title2)
                     .padding(.top, 16)
                 
-                follow
+                summary
                     .padding(.top, 56)
                 
                 Spacer()
@@ -68,7 +68,7 @@ extension ArtistProfileView {
             .frame(width: 96, height: 96)
     }
     
-    private var follow: some View {
+    private var summary: some View {
         HStack(spacing: 128) {
             VStack(spacing: 4) {
                 Text("Followers")
@@ -78,7 +78,7 @@ extension ArtistProfileView {
             }
             
             VStack(spacing: 4) {
-                Text("Following")
+                Text("Popularity")
                     .typography(.caption1)
                 Text("238")
                     .typography(.title2)

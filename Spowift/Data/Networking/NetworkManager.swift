@@ -28,7 +28,7 @@ class DefaultNetworkManager: NetworkManager {
         do {
             let (data, response) = try await urlSession.data(for: request)
             guard let httpResponse = response as? HTTPURLResponse,
-                  httpResponse.statusCode == 200 else {
+                  (200...299).contains(httpResponse.statusCode) else {
                 responseStatusCode = (response as? HTTPURLResponse)?.statusCode
                 throw NetworkError.invalidServerResponse
             }

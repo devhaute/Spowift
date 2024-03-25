@@ -9,7 +9,7 @@ import SwiftUI
 
 enum AppAlert {
     case custom(title: String, message: String)
-    case invalidURL
+    case error(_ error: AppError)
 }
 
 extension AppAlert: Identifiable {
@@ -17,8 +17,8 @@ extension AppAlert: Identifiable {
         switch self {
         case .custom:
             return "custom"
-        case .invalidURL:
-            return "invalidURL"
+        case .error:
+            return "error"
         }
     }
 }
@@ -28,8 +28,8 @@ extension AppAlert {
         switch self {
         case let .custom(title, message):
             return Alert(title: Text(title), message: Text(message))
-        case .invalidURL:
-            return Alert(title: Text("Error"), message: Text("The URL is incorrect.\nWe'll fix it 😓"))
+        case .error(let error):
+            return Alert(title: Text("Spowift"), message: Text(error.message))
         }
     }
 }

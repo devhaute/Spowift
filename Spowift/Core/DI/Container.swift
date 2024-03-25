@@ -31,19 +31,25 @@ extension Container {
 // MARK: - Injecting Use Cases -
 
 extension Container {
-    
+    var getArtistUC: Factory<GetArtistUC> {
+        Factory(self) { return DefaultGetArtistUC() }
+    }
 }
 
  // MARK: - Injecting Repositories -
 
 extension Container {
-    
+    var artistsRepository: Factory<ArtistsRepository> {
+        Factory(self) { return DefaultArtistsRepository() }
+    }
 }
 
 // MARK: - Injecting DataSources -
 
 extension Container {
-    
+    var artistsDataSource: Factory<ArtistsDataSource> {
+        Factory(self) { return DefaultArtistsDataSource() }
+    }
 }
 
 // MARK: - Injecting Utils -

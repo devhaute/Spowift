@@ -1,11 +1,12 @@
 //
-//  ArtistResponseModel.swift
+//  ArtistResponse.swift
 //  Spowift
 //
 //  Created by kai on 3/22/24.
 //
 
 import Foundation
+
 /*
 {
     "followers": {
@@ -35,11 +36,11 @@ import Foundation
 }
 */
 
-// MARK: - ArtistResponseModel
-struct ArtistResponseModel: Codable {
+// MARK: - ArtistResponse
+struct ArtistResponse: Codable {
+    let id: String
     let followers: Followers
     let popularity: Int
-    let id: String
     let images: [ArtistImage]
     let name: String
 }

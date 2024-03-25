@@ -8,8 +8,9 @@
 import Foundation
 import SpotifyWebAPI
 import KeychainAccess
-import Combine
 import ArkanaKeys
+import Combine
+import OSLog
 
 /// singleton manager
 final class SpotifyAuthManager: ObservableObject {
@@ -96,17 +97,38 @@ final class SpotifyAuthManager: ObservableObject {
 }
 
 extension SpotifyAuthManager {
-    func getAuthorizationURL() throws -> URL {
+    func getAuthorizationURL() -> Result<URL, NetworkError> {
         guard let url = api.authorizationManager.makeAuthorizationURL(
             redirectURI: loginRedirectURI,
             showDialog: true,
             state: authorizationState,
             scopes: [.userTopRead]
         ) else {
-            throw NetworkError.invalidURL
+            return .failure(.invalidURL)
         }
 
-        return url
+        return .success(url)
+    }
+    
+    func generateAuthorizationState() {
+        authorizationState = String.randomURLSafe(length: 128)
+    }
+    
+    func requestAccessAndRefreshTokens(url: URL) -> AnyPublisher<Void, AppError> {
+        guard url.scheme == loginRedirectURI.scheme else {
+            Logger.networking.error("not handling URL: unexpected scheme: '\(url)'")
+            return Fail(error: .networkError).eraseToAnyPublisher()
+        }
+        
+        return api.authorizationManager.requestAccessAndRefreshTokens(
+            redirectURIWithQuery: url,
+            state: authorizationState
+        )
+        .mapError { error in
+            Logger.networking.error("couldn't retrieve access and refresh tokens:\n\(error)")
+            return error.toAppError
+        }
+        .eraseToAnyPublisher()
     }
 
     private func authorizationManagerDidChange() {
@@ -128,7 +150,6 @@ extension SpotifyAuthManager {
                     "in keychain:\n\(error)"
             )
         }
-        
     }
 
     private func authorizationManagerDidDeauthorize() {

@@ -16,64 +16,36 @@ final class LoggedOutViewModel: ViewModel {
     @Injected(\.spotifyAuthManager) private var spotifyAuthManager
     
     // MARK: - Properties -
-    private var cancellables: Set<AnyCancellable> = []
+    private var cancellables = Set<AnyCancellable>()
 }
 
 // MARK: - Actions -
 
 extension LoggedOutViewModel {
+    // TODO: - 일관성 유지를 위해 Combine 방식 -> Result 반환 타입으로 변경하기
     func handleURL(_ url: URL) {
-        guard url.scheme == spotifyAuthManager.loginRedirectURI.scheme else {
-            print("not handling URL: unexpected scheme: '\(url)'")
-            alert = .custom(
-                title: "Cannot Handle Redirect",
-                message: "Unexpected URL"
-            )
-            
-            return
-        }
-        
-        spotifyAuthManager.api.authorizationManager.requestAccessAndRefreshTokens(
-            redirectURIWithQuery: url,
-            state: spotifyAuthManager.authorizationState
-        )
-        .receive(on: RunLoop.main)
-        .sink(receiveCompletion: { [weak self] completion in
-            guard let self else { return }
-            if case .failure(let error) = completion {
-                print("couldn't retrieve access and refresh tokens:\n\(error)")
-                let alertTitle: String
-                let alertMessage: String
-                
-                if let authError = error as? SpotifyAuthorizationError,
-                   authError.accessWasDenied {
-                    alertTitle = "You Denied The Authorization Request :("
-                    alertMessage = ""
+        spotifyAuthManager.requestAccessAndRefreshTokens(url: url)
+            .receive(on: RunLoop.main)
+            .sink { [weak self] completion in
+                guard let self else { return }
+                switch completion {
+                case .finished:
+                    spotifyAuthManager.generateAuthorizationState()
+                case .failure(let error):
+                    alert = .error(error)
                 }
-                else {
-                    alertTitle = "Couldn't Authorization With Your Account"
-                    alertMessage = error.localizedDescription
-                }
-                
-                alert = .custom(title: alertTitle, message: alertMessage)
             }
-        })
-        .store(in: &cancellables)
-        
-        // MARK: IMPORTANT: generate a new value for the state parameter after
-        // MARK: each authorization request. This ensures an incoming redirect
-        // MARK: from Spotify was the result of a request made by this app, and
-        // MARK: and not an attacker.
-        spotifyAuthManager.authorizationState = String.randomURLSafe(length: 128)
+            .store(in: &cancellables)
     }
     
     func onTapStartButton() {
-        do {
-            let url = try spotifyAuthManager.getAuthorizationURL()
+        let result = spotifyAuthManager.getAuthorizationURL()
+        
+        switch result {
+        case .success(let url):
             UIApplication.shared.open(url)
-        } catch {
-            alert = .invalidURL
+        case .failure(let error):
+            alert = .error(error.toAppError)
         }
     }
 }
-
