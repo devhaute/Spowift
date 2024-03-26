@@ -76,14 +76,14 @@ extension ArtistProfileView {
             VStack(spacing: 4) {
                 Text("Followers")
                     .typography(.caption1)
-                Text("\(viewModel.artist.totalFollowers)")
+                Text(viewModel.artist.totalFollowers.abbreviate)
                     .typography(.title2)
             }
             
             VStack(spacing: 4) {
                 Text("Popularity")
                     .typography(.caption1)
-                Text("\(viewModel.artist.popularity)")
+                Text(viewModel.artist.popularity.abbreviate)
                     .typography(.title2)
             }
         }

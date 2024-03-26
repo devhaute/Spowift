@@ -28,5 +28,3 @@ final class DefaultArtistsDataSource: ArtistsDataSource {
         return response
     }
 }
-
-
