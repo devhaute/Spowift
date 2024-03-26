@@ -21,7 +21,7 @@ struct ArtistProfileView: View {
             VStack(spacing: 0) {
                 profileImage
                 
-                Text("Fauzian Ahmad")
+                Text(viewModel.artist.name)
                     .typography(.title2)
                     .padding(.top, 16)
                 
@@ -48,6 +48,9 @@ struct ArtistProfileView: View {
                 .typography(.title1)
                 .foregroundStyle(.neutralWhite)
         }
+        .task {
+            await viewModel.getArtist(id: id)
+        }
     }
 }
 
@@ -73,14 +76,14 @@ extension ArtistProfileView {
             VStack(spacing: 4) {
                 Text("Followers")
                     .typography(.caption1)
-                Text("129")
+                Text("\(viewModel.artist.totalFollowers)")
                     .typography(.title2)
             }
             
             VStack(spacing: 4) {
                 Text("Popularity")
                     .typography(.caption1)
-                Text("238")
+                Text("\(viewModel.artist.popularity)")
                     .typography(.title2)
             }
         }

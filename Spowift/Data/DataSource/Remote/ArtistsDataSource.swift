@@ -18,9 +18,12 @@ protocol ArtistsDataSource {
 
 final class DefaultArtistsDataSource: ArtistsDataSource {
     @Injected(\.networkManager) private var networkManager
+    @Injected(\.spotifyAuthManager) private var authManager
     
     func getArtist(id: String) async throws -> ArtistResponse {
-        let request = ArtistsRequest.getArtist(id: id)
+        let headers: HTTPHeaders = ["Authorization" : "Bearer \(authManager.api.authorizationManager.accessToken ?? "")"]
+        
+        let request = ArtistsRequest.getArtist(headers: headers, id: id)
         let response: ArtistResponse = try await networkManager.makeRequest(with: request)
         return response
     }

@@ -13,6 +13,7 @@ extension ArtistResponse: DomainMapper {
             id: self.id,
             name: self.name,
             totalFollowers: self.followers.total,
+            popularity: self.popularity,
             imageURL: self.images.first?.url ?? ""
         )
     }

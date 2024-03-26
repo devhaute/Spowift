@@ -7,6 +7,7 @@
 
 import Foundation
 import Factory
+import OSLog
 
 protocol ArtistsRepository {
     func getArtist(id: String) async -> Result<Artist, AppError>
@@ -20,7 +21,6 @@ final class DefaultArtistsRepository: ArtistsRepository {
             let data = try await dataSource.getArtist(id: id)
             return .success(data.toDomain())
         } catch {
-            print(error.self)
             return .failure(error.toAppError)
         }
     }

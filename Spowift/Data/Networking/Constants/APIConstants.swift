@@ -8,6 +8,8 @@
 import Foundation
 
 enum APIConstants {
-    static let authHost = "https://accounts.spotify.com/api"
-    static let apiHost = "https://api.spotify.com/v1"
+    static let authHost = "accounts.spotify.com"
+    static let apiHost = "api.spotify.com"
+    
+    static let currentAPIVersionPath = "/v1"
 }

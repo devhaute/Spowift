@@ -16,23 +16,23 @@ final class ArtistProfileViewModel: ViewModel {
     // MARK: - Properties -
     
     // MARK: - Observable Properties -
-    @Published var artist: Artist?
+    @Published var artist: Artist = .dummy
+    
     // MARK: - Init -
 }
 
 // MARK: - Actions -
 
 extension ArtistProfileViewModel {
-    func getArtist(id: String) {
-        Task { @MainActor in
-            let result = await getArtistUC.execute(with: .init(id: id))
-            
-            switch result {
-            case .success(let artist):
-                self.artist = artist
-            case .failure(let error):
-                alert = .error(error)
-            }
+    @MainActor
+    func getArtist(id: String) async {
+        let result = await getArtistUC.execute(with: .init(id: id))
+        
+        switch result {
+        case .success(let artist):
+            self.artist = artist
+        case .failure(let error):
+            alert = .error(error)
         }
     }
 }

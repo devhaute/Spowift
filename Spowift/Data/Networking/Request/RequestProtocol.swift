@@ -12,7 +12,7 @@ protocol RequestProtocol {
     var host: String { get }
     var path: String { get }
     var requestType: RequestType { get }
-    var headers: [String: String] { get }
+    var headers: HTTPHeaders { get }
     var params: [String: Any] { get }
     var urlParams: [String: String?] { get }
 }
@@ -31,7 +31,7 @@ extension RequestProtocol {
         [:]
     }
     
-    var headers: [String: String] {
+    var headers: HTTPHeaders {
         [:]
     }
     
@@ -39,20 +39,17 @@ extension RequestProtocol {
         var components = URLComponents()
         components.scheme = "https"
         components.host = host
-        components.path = path
+        components.path = APIConstants.currentAPIVersionPath + path
         
         /// Add default query params
-        var queryParamsList: [URLQueryItem] = [
-            URLQueryItem(name: "Authorization", value: "Bearer ")
-        ]
+        var queryParamsList: [URLQueryItem] = []
         
         if !urlParams.isEmpty {
             queryParamsList.append(contentsOf: urlParams.map { URLQueryItem(name: $0, value: $1) })
+            components.queryItems = queryParamsList
         }
         
-        components.queryItems = queryParamsList
-        
-        guard let url = components.url else { throw  NetworkError.invalidURL }
+        guard let url = components.url else { throw NetworkError.invalidURL }
         
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = requestType.rawValue
