@@ -24,7 +24,7 @@ final class DefaultArtistsDataSource: ArtistsDataSource {
         let headers: HTTPHeaders = ["Authorization" : "Bearer \(authManager.api.authorizationManager.accessToken ?? "")"]
         
         let request = ArtistsRequest.getArtist(headers: headers, id: id)
-        let response: ArtistResponse = try await networkManager.makeRequest(with: request)
+        let response: ArtistResponse = try await networkManager.send(with: request)
         return response
     }
 }

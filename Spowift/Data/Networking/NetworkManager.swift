@@ -11,7 +11,7 @@ import OSLog
 /// The network manager protocol.
 /// It is responsible for making network requests.
 protocol NetworkManager {
-    func makeRequest<T: Decodable>(with requestData: RequestProtocol) async throws -> T
+    func send<T: Decodable>(with requestData: RequestProtocol) async throws -> T
 }
 
 class DefaultNetworkManager: NetworkManager {
@@ -21,8 +21,8 @@ class DefaultNetworkManager: NetworkManager {
         self.urlSession = urlSession
     }
     
-    /// Makes a network request.
-    func makeRequest<T: Decodable>(with requestData: RequestProtocol) async throws -> T {
+    /// send a network request.
+    func send<T: Decodable>(with requestData: RequestProtocol) async throws -> T {
         let request = try requestData.request()
         var responseStatusCode: Int?
         do {

@@ -12,4 +12,5 @@ enum RequestType: String {
     case POST
 }
 
+typealias JSON = [String: Any]
 typealias HTTPHeaders = [String: String]

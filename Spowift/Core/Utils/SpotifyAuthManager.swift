@@ -68,7 +68,7 @@ final class SpotifyAuthManager: ObservableObject {
                     AuthorizationCodeFlowManager.self,
                     from: authManagerData
                 )
-                print("found authorization information in keychain")
+                debug("found authorization information in keychain")
                 
                 /*
                  This assignment causes `authorizationManagerDidChange` to emit
@@ -87,11 +87,11 @@ final class SpotifyAuthManager: ObservableObject {
                 self.api.authorizationManager = authorizationManager
                 
             } catch {
-                print("could not decode authorizationManager from data:\n\(error)")
+                debug("could not decode authorizationManager from data:\n\(error)")
             }
         }
         else {
-            print("did NOT find authorization information in keychain")
+            debug("did NOT find authorization information in keychain")
         }
     }
 }
@@ -142,10 +142,10 @@ extension SpotifyAuthManager {
             
             // Save the data to the keychain.
             keychain[data: authorizationManagerKey] = authManagerData
-            print("did save authorization manager to keychain")
+            debug("did save authorization manager to keychain")
             
         } catch {
-            print(
+            debug(
                 "couldn't encode authorizationManager for storage " +
                     "in keychain:\n\(error)"
             )
@@ -157,10 +157,10 @@ extension SpotifyAuthManager {
         
         do {
             try keychain.remove(authorizationManagerKey)
-            print("did remove authorization manager from keychain")
+            debug("did remove authorization manager from keychain")
             
         } catch {
-            print(
+            debug(
                 "couldn't remove authorization manager " +
                 "from keychain: \(error)"
             )
