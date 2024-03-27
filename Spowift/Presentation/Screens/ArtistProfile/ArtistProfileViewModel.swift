@@ -13,10 +13,13 @@ final class ArtistProfileViewModel: ViewModel {
     // MARK: - Dependencies -
     @Injected(\.getArtistUC) private var getArtistUC
     
-    // MARK: - Properties -
-    
     // MARK: - Observable Properties -
     @Published var artist: Artist = .dummy
+    
+    // MARK: - Properties -
+    var profileImageURL: URL? {
+        URL(string: artist.imageURL)
+    }
     
     // MARK: - Init -
 }

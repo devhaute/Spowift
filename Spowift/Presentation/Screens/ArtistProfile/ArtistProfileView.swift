@@ -65,10 +65,13 @@ extension ArtistProfileView {
     }
     
     private var profileImage: some View {
-        Image.App.centerTab
-            .resizable()
-            .scaledToFit()
-            .frame(width: 96, height: 96)
+        AsyncImage(url: viewModel.profileImageURL) { image in
+            image
+                .resizable()
+                .scaledToFit()
+        } placeholder: {
+            ProfileView()
+        }.frame(width: 96, height: 96)
     }
     
     private var summary: some View {
